@@ -1,0 +1,86 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"code\":\"TESTBOT-LIFECYCLE\",\"discountPercent\":25}",
+    "ResponseBody": "{\"response\":{\"id\":7301,\"code\":\"TESTBOT-LIFECYCLE\",\"discountPercent\":25,\"createdById\":1,\"createdAt\":\"2026-09-12T10:00:00.000Z\",\"updatedAt\":\"2026-09-12T10:00:00.000Z\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/coupons",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:36:45.413Z",
+    "Scheme": "http",
+    "scenarioName": "coupons-create-retrieve-list-lifecycle",
+    "UniqueFields": [
+      "code"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":7301,\"code\":\"TESTBOT-LIFECYCLE\",\"discountPercent\":25,\"createdById\":1,\"createdAt\":\"2026-09-12T10:00:00.000Z\",\"updatedAt\":\"2026-09-12T10:00:00.000Z\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/coupons/7301",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:36:46.413Z",
+    "Scheme": "http",
+    "scenarioName": "coupons-create-retrieve-list-lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":[{\"id\":7301,\"code\":\"TESTBOT-LIFECYCLE\",\"discountPercent\":25,\"createdById\":1,\"createdAt\":\"2026-09-12T10:00:00.000Z\",\"updatedAt\":\"2026-09-12T10:00:00.000Z\"}]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/coupons",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:36:47.413Z",
+    "Scheme": "http",
+    "scenarioName": "coupons-create-retrieve-list-lifecycle"
+  }
+]

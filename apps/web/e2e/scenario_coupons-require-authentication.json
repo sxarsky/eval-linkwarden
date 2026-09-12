@@ -1,0 +1,74 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"You must be logged in.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/coupons",
+    "QueryParams": {},
+    "StatusCode": 401,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:37:23.013Z",
+    "Scheme": "http",
+    "scenarioName": "coupons-require-authentication"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"code\":\"TESTBOT-NOAUTH\",\"discountPercent\":10}",
+    "ResponseBody": "{\"response\":\"You must be logged in.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/coupons",
+    "QueryParams": {},
+    "StatusCode": 401,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:37:24.013Z",
+    "Scheme": "http",
+    "scenarioName": "coupons-require-authentication"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"You must be logged in.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/coupons/1",
+    "QueryParams": {},
+    "StatusCode": 401,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:37:25.013Z",
+    "Scheme": "http",
+    "scenarioName": "coupons-require-authentication"
+  }
+]

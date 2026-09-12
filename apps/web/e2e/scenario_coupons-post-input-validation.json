@@ -1,0 +1,320 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"code\":\"TESTBOT-VAL-BASE\",\"discountPercent\":25}",
+    "ResponseBody": "{\"response\":{\"id\":7321,\"code\":\"TESTBOT-VAL-BASE\",\"discountPercent\":25,\"createdById\":1,\"createdAt\":\"2026-09-12T10:00:00.000Z\",\"updatedAt\":\"2026-09-12T10:00:00.000Z\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/coupons",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:37:07.456Z",
+    "Scheme": "http",
+    "scenarioName": "coupons-post-input-validation",
+    "UniqueFields": [
+      "code"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"discountPercent\":25}",
+    "ResponseBody": "{\"response\":\"A valid coupon code is required.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/coupons",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:37:08.456Z",
+    "Scheme": "http",
+    "scenarioName": "coupons-post-input-validation"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"code\":\"\",\"discountPercent\":25}",
+    "ResponseBody": "{\"response\":\"A valid coupon code is required.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/coupons",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:37:09.456Z",
+    "Scheme": "http",
+    "scenarioName": "coupons-post-input-validation"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"code\":\"   \",\"discountPercent\":25}",
+    "ResponseBody": "{\"response\":\"A valid coupon code is required.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/coupons",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:37:10.456Z",
+    "Scheme": "http",
+    "scenarioName": "coupons-post-input-validation"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"code\":12345,\"discountPercent\":25}",
+    "ResponseBody": "{\"response\":\"A valid coupon code is required.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/coupons",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:37:11.456Z",
+    "Scheme": "http",
+    "scenarioName": "coupons-post-input-validation"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"code\":\"TESTBOT-VAL-A\",\"discountPercent\":\"50\"}",
+    "ResponseBody": "{\"response\":\"discountPercent must be a number between 0 and 100.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/coupons",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:37:12.456Z",
+    "Scheme": "http",
+    "scenarioName": "coupons-post-input-validation",
+    "UniqueFields": [
+      "code"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"code\":\"TESTBOT-VAL-B\",\"discountPercent\":-1}",
+    "ResponseBody": "{\"response\":\"discountPercent must be a number between 0 and 100.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/coupons",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:37:13.456Z",
+    "Scheme": "http",
+    "scenarioName": "coupons-post-input-validation",
+    "UniqueFields": [
+      "code"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"code\":\"TESTBOT-VAL-C\",\"discountPercent\":101}",
+    "ResponseBody": "{\"response\":\"discountPercent must be a number between 0 and 100.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/coupons",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:37:14.456Z",
+    "Scheme": "http",
+    "scenarioName": "coupons-post-input-validation",
+    "UniqueFields": [
+      "code"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"code\":\"TESTBOT-VAL-D\",\"discountPercent\":0}",
+    "ResponseBody": "{\"response\":{\"id\":7324,\"code\":\"TESTBOT-VAL-D\",\"discountPercent\":0,\"createdById\":1,\"createdAt\":\"2026-09-12T10:00:00.000Z\",\"updatedAt\":\"2026-09-12T10:00:00.000Z\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/coupons",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:37:15.456Z",
+    "Scheme": "http",
+    "scenarioName": "coupons-post-input-validation",
+    "UniqueFields": [
+      "code"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"code\":\"TESTBOT-VAL-E\",\"discountPercent\":100}",
+    "ResponseBody": "{\"response\":{\"id\":7325,\"code\":\"TESTBOT-VAL-E\",\"discountPercent\":100,\"createdById\":1,\"createdAt\":\"2026-09-12T10:00:00.000Z\",\"updatedAt\":\"2026-09-12T10:00:00.000Z\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/coupons",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:37:16.456Z",
+    "Scheme": "http",
+    "scenarioName": "coupons-post-input-validation",
+    "UniqueFields": [
+      "code"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"code\":\"TESTBOT-VAL-F\",\"discountPercent\":12.5}",
+    "ResponseBody": "{\"response\":\"discountPercent must be a number between 0 and 100.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/coupons",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:37:17.456Z",
+    "Scheme": "http",
+    "scenarioName": "coupons-post-input-validation",
+    "UniqueFields": [
+      "code"
+    ]
+  }
+]

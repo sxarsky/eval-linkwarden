@@ -1,0 +1,59 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"code\":\"TESTBOT-DUP\",\"discountPercent\":10}",
+    "ResponseBody": "{\"response\":{\"id\":7311,\"code\":\"TESTBOT-DUP\",\"discountPercent\":10,\"createdById\":1,\"createdAt\":\"2026-09-12T10:00:00.000Z\",\"updatedAt\":\"2026-09-12T10:00:00.000Z\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/coupons",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:36:52.007Z",
+    "Scheme": "http",
+    "scenarioName": "coupons-duplicate-code-returns-409",
+    "UniqueFields": [
+      "code"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"code\":\"TESTBOT-DUP\",\"discountPercent\":50}",
+    "ResponseBody": "{\"response\":\"A coupon with this code already exists.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/coupons",
+    "QueryParams": {},
+    "StatusCode": 409,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:36:53.007Z",
+    "Scheme": "http",
+    "scenarioName": "coupons-duplicate-code-returns-409"
+  }
+]

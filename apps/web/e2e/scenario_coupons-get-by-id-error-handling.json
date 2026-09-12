@@ -1,0 +1,167 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"code\":\"TESTBOT-ID-BASE\",\"discountPercent\":10}",
+    "ResponseBody": "{\"response\":{\"id\":7331,\"code\":\"TESTBOT-ID-BASE\",\"discountPercent\":10,\"createdById\":1,\"createdAt\":\"2026-09-12T10:00:00.000Z\",\"updatedAt\":\"2026-09-12T10:00:00.000Z\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/coupons",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:37:16.695Z",
+    "Scheme": "http",
+    "scenarioName": "coupons-get-by-id-error-handling",
+    "UniqueFields": [
+      "code"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":7331,\"code\":\"TESTBOT-ID-BASE\",\"discountPercent\":10,\"createdById\":1,\"createdAt\":\"2026-09-12T10:00:00.000Z\",\"updatedAt\":\"2026-09-12T10:00:00.000Z\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/coupons/7331",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:37:17.695Z",
+    "Scheme": "http",
+    "scenarioName": "coupons-get-by-id-error-handling"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"Coupon not found.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/coupons/999999999",
+    "QueryParams": {},
+    "StatusCode": 404,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:37:18.695Z",
+    "Scheme": "http",
+    "scenarioName": "coupons-get-by-id-error-handling"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"Invalid coupon ID.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/coupons/abc",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:37:19.695Z",
+    "Scheme": "http",
+    "scenarioName": "coupons-get-by-id-error-handling"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"Invalid coupon ID.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/coupons/1.5",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:37:20.695Z",
+    "Scheme": "http",
+    "scenarioName": "coupons-get-by-id-error-handling"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"Method not allowed.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/coupons/7331",
+    "QueryParams": {},
+    "StatusCode": 405,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:37:21.695Z",
+    "Scheme": "http",
+    "scenarioName": "coupons-get-by-id-error-handling"
+  }
+]
