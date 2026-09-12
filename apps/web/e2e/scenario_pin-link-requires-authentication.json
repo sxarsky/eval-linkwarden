@@ -1,0 +1,26 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{}",
+    "ResponseBody": "{\"response\":\"You must be logged in.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PATCH",
+    "Path": "/api/v1/links/999999999/pin",
+    "QueryParams": {},
+    "StatusCode": 401,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:34:08.153Z",
+    "Scheme": "http",
+    "scenarioName": "pin-link-requires-authentication"
+  }
+]

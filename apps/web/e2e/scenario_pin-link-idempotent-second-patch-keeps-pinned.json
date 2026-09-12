@@ -1,0 +1,114 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"skyramp-pin-idem\",\"url\":\"https://example.com/skyramp-pin-idem\",\"type\":\"url\"}",
+    "ResponseBody": "{\"response\":{\"id\":4242,\"name\":\"skyramp-pin-idem\",\"url\":\"https://example.com/skyramp-pin-idem\",\"type\":\"url\",\"createdById\":1,\"collectionId\":1}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:33:52.556Z",
+    "Scheme": "http",
+    "scenarioName": "pin-link-idempotent-second-patch-keeps-pinned",
+    "UniqueFields": [
+      "url",
+      "name"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{}",
+    "ResponseBody": "{\"response\":{\"id\":4242,\"name\":\"skyramp-pin-idem\",\"url\":\"https://example.com/skyramp-pin-idem\",\"pinnedBy\":[{\"id\":1}],\"updatedAt\":\"2026-09-12T20:29:52.874Z\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PATCH",
+    "Path": "/api/v1/links/4242/pin",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:33:53.556Z",
+    "Scheme": "http",
+    "scenarioName": "pin-link-idempotent-second-patch-keeps-pinned"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{}",
+    "ResponseBody": "{\"response\":{\"id\":4242,\"name\":\"skyramp-pin-idem\",\"url\":\"https://example.com/skyramp-pin-idem\",\"pinnedBy\":[{\"id\":1}],\"updatedAt\":\"2026-09-12T20:29:52.874Z\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PATCH",
+    "Path": "/api/v1/links/4242/pin",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:33:54.556Z",
+    "Scheme": "http",
+    "scenarioName": "pin-link-idempotent-second-patch-keeps-pinned"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":4242,\"name\":\"skyramp-pin-idem\",\"url\":\"https://example.com/skyramp-pin-idem\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/links/4242",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:33:55.556Z",
+    "Scheme": "http",
+    "scenarioName": "pin-link-idempotent-second-patch-keeps-pinned"
+  }
+]
