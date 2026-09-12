@@ -1,0 +1,128 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"username\":\"testbot-admin\",\"password\":\"testbotpassword123\",\"sessionName\":\"skyramp-prefs-pat-session\"}",
+    "ResponseBody": "{\"response\":{\"token\":\"eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..SESSIONTOKEN\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/session",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:38.400Z",
+    "Scheme": "http",
+    "scenarioName": "preferences_rejects_personal_access_token",
+    "UniqueFields": [
+      "sessionName"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"skyramp-prefs-pat\",\"expires\":0}",
+    "ResponseBody": "{\"response\":{\"secretKey\":\"eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..PATTOKEN\",\"token\":{\"id\":3,\"name\":\"skyramp-prefs-pat\",\"isSession\":false,\"revoked\":false}}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/tokens",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:39.400Z",
+    "Scheme": "http",
+    "scenarioName": "preferences_rejects_personal_access_token",
+    "UniqueFields": [
+      "name"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"Bearer token authentication is not accepted for this endpoint. Use a session cookie.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/users/me/preferences",
+    "QueryParams": {},
+    "StatusCode": 401,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:40.400Z",
+    "Scheme": "http",
+    "scenarioName": "preferences_rejects_personal_access_token"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"Unauthorized.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/users/me/preferences",
+    "QueryParams": {},
+    "StatusCode": 401,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:41.400Z",
+    "Scheme": "http",
+    "scenarioName": "preferences_rejects_personal_access_token"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":3,\"revoked\":true}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/tokens/3",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:42.400Z",
+    "Scheme": "http",
+    "scenarioName": "preferences_rejects_personal_access_token"
+  }
+]
