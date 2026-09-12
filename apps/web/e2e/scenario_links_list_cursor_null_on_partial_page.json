@@ -1,0 +1,151 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"type\":\"url\",\"url\":\"https://cursor-null-one.example.com/a\",\"name\":\"Cursor Null Link One\",\"collection\":{\"name\":\"Cursor Null Collection\"},\"tags\":[]}",
+    "ResponseBody": "{\"response\":{\"id\":3111,\"name\":\"Cursor Null Link One\",\"url\":\"https://cursor-null-one.example.com/a\",\"collectionId\":3211,\"type\":\"url\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:46.413Z",
+    "Scheme": "http",
+    "scenarioName": "links_list_cursor_null_on_partial_page",
+    "UniqueFields": [
+      "url",
+      "collection.name"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"type\":\"url\",\"url\":\"https://cursor-null-two.example.com/b\",\"name\":\"Cursor Null Link Two\",\"collection\":{\"id\":3211},\"tags\":[]}",
+    "ResponseBody": "{\"response\":{\"id\":3112,\"name\":\"Cursor Null Link Two\",\"url\":\"https://cursor-null-two.example.com/b\",\"collectionId\":3211,\"type\":\"url\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:47.413Z",
+    "Scheme": "http",
+    "scenarioName": "links_list_cursor_null_on_partial_page",
+    "UniqueFields": [
+      "url"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"data\":[{\"name\":\"Cursor Null Link Two\"},{\"name\":\"Cursor Null Link One\"}],\"meta\":{\"total\":2,\"cursor\":null}}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/links",
+    "QueryParams": {
+      "sort": [
+        "0"
+      ],
+      "collectionId": [
+        "3211"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:48.413Z",
+    "Scheme": "http",
+    "scenarioName": "links_list_cursor_null_on_partial_page"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkIds\":[3111,3112]}",
+    "ResponseBody": "{\"response\":{\"count\":2}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:49.413Z",
+    "Scheme": "http",
+    "scenarioName": "links_list_cursor_null_on_partial_page"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":3211,\"name\":\"Cursor Null Collection\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/3211",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:50.413Z",
+    "Scheme": "http",
+    "scenarioName": "links_list_cursor_null_on_partial_page"
+  }
+]

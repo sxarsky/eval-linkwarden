@@ -1,0 +1,151 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"type\":\"url\",\"url\":\"https://envelope-shape-one.example.com/a\",\"name\":\"Envelope Shape Link One\",\"collection\":{\"name\":\"Envelope Shape Collection\"},\"tags\":[]}",
+    "ResponseBody": "{\"response\":{\"id\":101,\"name\":\"Envelope Shape Link One\",\"url\":\"https://envelope-shape-one.example.com/a\",\"collectionId\":201,\"type\":\"url\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:33.581Z",
+    "Scheme": "http",
+    "scenarioName": "links_list_envelope_shape",
+    "UniqueFields": [
+      "url",
+      "collection.name"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"type\":\"url\",\"url\":\"https://envelope-shape-two.example.com/b\",\"name\":\"Envelope Shape Link Two\",\"collection\":{\"id\":201},\"tags\":[]}",
+    "ResponseBody": "{\"response\":{\"id\":102,\"name\":\"Envelope Shape Link Two\",\"url\":\"https://envelope-shape-two.example.com/b\",\"collectionId\":201,\"type\":\"url\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:34.581Z",
+    "Scheme": "http",
+    "scenarioName": "links_list_envelope_shape",
+    "UniqueFields": [
+      "url"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"data\":[{\"id\":102,\"collectionId\":201},{\"id\":101,\"collectionId\":201}],\"meta\":{\"total\":2,\"cursor\":\"101\"}}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/links",
+    "QueryParams": {
+      "sort": [
+        "0"
+      ],
+      "collectionId": [
+        "201"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:35.581Z",
+    "Scheme": "http",
+    "scenarioName": "links_list_envelope_shape"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkIds\":[101,102]}",
+    "ResponseBody": "{\"response\":{\"count\":2}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:36.581Z",
+    "Scheme": "http",
+    "scenarioName": "links_list_envelope_shape"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":201,\"name\":\"Envelope Shape Collection\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/201",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:37.581Z",
+    "Scheme": "http",
+    "scenarioName": "links_list_envelope_shape"
+  }
+]
