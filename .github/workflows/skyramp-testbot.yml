@@ -8,10 +8,11 @@ on:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.event.issue.number || github.run_id }}
-  cancel-in-progress: ${{ github.event_name == 'pull_request' && github.actor != 'skyramp-testbot[bot]' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' && github.event.action != 'closed' && github.actor != 'skyramp-testbot[bot]' }}
 
 jobs:
   testbot:
+    # Only run for pull_request events or issue_comment on PRs mentioning @skyramp-testbot
     if: >-
       github.event_name == 'pull_request' ||
       (github.event_name == 'issue_comment' && github.event.issue.pull_request && contains(github.event.comment.body, '@skyramp-testbot') && github.event.comment.user.login != 'skyramp-testbot[bot]')
@@ -24,23 +25,20 @@ jobs:
     steps:
       - name: Generate GitHub App Token
         id: skyramp-testbot-app-token
-        uses: actions/create-github-app-token@v1
+        uses: actions/create-github-app-token@d72941d797fd3113feb6b93fd0dec494b13a2547 # v1
         with:
           app-id: ${{ secrets.SKYRAMP_TESTBOT_APP_ID }}
           private-key: ${{ secrets.SKYRAMP_TESTBOT_APP_PRIVATE_KEY }}
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           fetch-depth: 0
           token: ${{ steps.skyramp-testbot-app-token.outputs.token }}
+          persist-credentials: false
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      # apps/web's postinstall runs `playwright install --with-deps chromium`, whose
-      # --with-deps step apt-gets Debian 11 packages that were removed from the mirrors
-      # when bullseye LTS ended, so the image build 404s. The SUT only serves the web
-      # app; Playwright runs from the host, so the browsers are not needed here.
       - name: Neutralise the Playwright postinstall (Debian 11 archives are gone)
         run: |
           node -e '
@@ -54,9 +52,6 @@ jobs:
             fs.writeFileSync(f, JSON.stringify(pkg, null, 2) + "\n");
           '
 
-      # Debian 11 LTS ended 2026-08-31 and the bullseye-security Release file expired on
-      # 2026-09-07 with no replacement coming, so `apt-get update` in the Dockerfile refuses
-      # the index. The image only needs curl and ca-certificates from the main archive.
       - name: Let apt use the expired bullseye-security index
         run: |
           node -e '
@@ -77,20 +72,18 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      - uses: skyramp/testbot@56fac3cc7b777cd08598ed7a7586f8d9733f3507 # v0.11.11
+      - uses: skyramp/testbot@4722126f99847b5ef600de0a4b26e3349fa0eafe # v0.11.12
         with:
-          skyrampMcpVersion: "0.4.1-rc.1"
-          skyrampExecutorVersion: "v1.3.44"
           skyrampLicenseFile: ${{ secrets.SKYRAMP_LICENSE_FILE }}
           anthropicApiKey: ${{ secrets.SKYRAMP_TESTBOT_API_KEY }}
           githubToken: ${{ steps.skyramp-testbot-app-token.outputs.token }}
-          sutSetupMode: 'none'
-          sutSourceWorkflowFile: ''
-          sutSourceDockerComposeFile: ''
+          githubAppId: ${{ secrets.SKYRAMP_TESTBOT_APP_ID }}
+          githubAppPrivateKey: ${{ secrets.SKYRAMP_TESTBOT_APP_PRIVATE_KEY }}
+          skyrampMcpVersion: '0.4.1-rc.1'
+          skyrampExecutorVersion: 'v1.3.44'
           targetSetupCommand: 'bash .skyramp/sut/setup.sh'
           targetReadyCheckCommand: 'curl -sf http://localhost:3000/'
           targetReadyCheckTimeout: '1800'
           targetReadyCheckDiagnosticsCommand: 'docker compose -f .skyramp/sut/docker-compose.testbot.yml --project-directory . ps && docker compose -f .skyramp/sut/docker-compose.testbot.yml --project-directory . logs --tail=50'
           targetTeardownCommand: 'docker compose -f .skyramp/sut/docker-compose.testbot.yml --project-directory . down -v'
           authTokenCommand: 'bash .skyramp/sut/get-auth-token.sh'
-          uiCredentials: 'testbot-admin:testbotpassword123'
