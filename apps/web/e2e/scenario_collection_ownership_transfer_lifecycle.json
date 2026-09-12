@@ -1,0 +1,170 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"username\":\"testbot-member\",\"password\":\"TestbotMember123!\",\"name\":\"Testbot Member\"}",
+    "ResponseBody": "{\"response\":{\"id\":777,\"username\":\"testbot-member\",\"name\":\"Testbot Member\",\"email\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/users",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:50:14.552Z",
+    "Scheme": "http",
+    "scenarioName": "collection_ownership_transfer_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"transfer-lifecycle\",\"description\":\"\",\"color\":\"#0ea5e9\",\"isPublic\":false,\"members\":[]}",
+    "ResponseBody": "{\"response\":{\"id\":4242,\"name\":\"transfer-lifecycle\",\"ownerId\":1,\"members\":[]}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:50:15.552Z",
+    "Scheme": "http",
+    "scenarioName": "collection_ownership_transfer_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"id\":4242,\"name\":\"transfer-lifecycle\",\"members\":[{\"userId\":777,\"canCreate\":true,\"canUpdate\":true,\"canDelete\":false}]}",
+    "ResponseBody": "{\"response\":{\"id\":4242,\"name\":\"transfer-lifecycle\",\"ownerId\":1}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PUT",
+    "Path": "/api/v1/collections/4242",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:50:16.552Z",
+    "Scheme": "http",
+    "scenarioName": "collection_ownership_transfer_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":[{\"userId\":777,\"collectionId\":4242,\"canCreate\":true,\"canUpdate\":true,\"canDelete\":false,\"user\":{\"id\":777,\"name\":\"Testbot Member\",\"email\":null}}]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/collections/4242/members",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:50:17.552Z",
+    "Scheme": "http",
+    "scenarioName": "collection_ownership_transfer_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"toUserId\":777}",
+    "ResponseBody": "{\"response\":{\"id\":4242,\"name\":\"transfer-lifecycle\",\"ownerId\":777}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections/4242/transfer",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:50:18.552Z",
+    "Scheme": "http",
+    "scenarioName": "collection_ownership_transfer_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"Only the owner can manage members.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/collections/4242/members",
+    "QueryParams": {},
+    "StatusCode": 403,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:50:19.552Z",
+    "Scheme": "http",
+    "scenarioName": "collection_ownership_transfer_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":4242}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/4242",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:50:20.552Z",
+    "Scheme": "http",
+    "scenarioName": "collection_ownership_transfer_lifecycle"
+  }
+]
