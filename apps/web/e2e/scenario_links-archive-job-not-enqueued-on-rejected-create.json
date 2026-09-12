@@ -1,0 +1,191 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"url\":\"https://testbot.example.com/archive-reject-guard\",\"name\":\"testbot reject guard base\",\"collection\":{\"name\":\"Unorganized\"},\"tags\":[]}",
+    "ResponseBody": "{\"response\":{\"id\":9401,\"name\":\"testbot reject guard base\",\"url\":\"https://testbot.example.com/archive-reject-guard\",\"type\":\"url\",\"collectionId\":1,\"archiveStatus\":\"pending\",\"archiveJobId\":\"6f1d0f6a-1f1a-4a1a-9a1a-1a1a1a1a1a04\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:19.471Z",
+    "Scheme": "http",
+    "scenarioName": "links-archive-job-not-enqueued-on-rejected-create"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"url\":\"not-a-url\",\"name\":\"testbot bad url\",\"tags\":[]}",
+    "ResponseBody": "{\"response\":\"Error: Invalid URL [url]\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:20.471Z",
+    "Scheme": "http",
+    "scenarioName": "links-archive-job-not-enqueued-on-rejected-create"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"url\":\"https://testbot.example.com/bad-type\",\"type\":\"invalid-type\",\"name\":\"testbot bad type\",\"tags\":[]}",
+    "ResponseBody": "{\"response\":\"Error: Invalid option: expected one of \\\"url\\\"|\\\"pdf\\\"|\\\"image\\\" [type]\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:21.471Z",
+    "Scheme": "http",
+    "scenarioName": "links-archive-job-not-enqueued-on-rejected-create"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"url\":\"https://testbot.example.com/bad-image\",\"image\":\"gif\",\"name\":\"testbot bad image\",\"tags\":[]}",
+    "ResponseBody": "{\"response\":\"Error: Invalid option: expected one of \\\"jpeg\\\"|\\\"png\\\" [image]\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:22.471Z",
+    "Scheme": "http",
+    "scenarioName": "links-archive-job-not-enqueued-on-rejected-create"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"url\":\"https://testbot.example.com/bad-tag\",\"name\":\"testbot bad tag\",\"tags\":[{\"name\":\"abcdefghijabcdefghijabcdefghijabcdefghijabcdefghijx\"}]}",
+    "ResponseBody": "{\"response\":\"Error: Too big: expected string to have <=50 characters [tags, 0, name]\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:23.471Z",
+    "Scheme": "http",
+    "scenarioName": "links-archive-job-not-enqueued-on-rejected-create"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"url\":\"https://testbot.example.com/bad-collection\",\"name\":\"testbot bad collection\",\"collection\":{\"id\":987654321},\"tags\":[]}",
+    "ResponseBody": "{\"response\":\"Collection is not accessible.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:24.471Z",
+    "Scheme": "http",
+    "scenarioName": "links-archive-job-not-enqueued-on-rejected-create"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkIds\":[9401]}",
+    "ResponseBody": "{\"response\":{\"count\":1}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:25.471Z",
+    "Scheme": "http",
+    "scenarioName": "links-archive-job-not-enqueued-on-rejected-create"
+  }
+]

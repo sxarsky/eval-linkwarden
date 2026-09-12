@@ -1,0 +1,83 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"url\":\"https://testbot.example.com/archive-idem\",\"name\":\"testbot idem A\",\"collection\":{\"name\":\"Unorganized\"},\"tags\":[]}",
+    "ResponseBody": "{\"response\":{\"id\":9201,\"name\":\"testbot idem A\",\"url\":\"https://testbot.example.com/archive-idem\",\"type\":\"url\",\"collectionId\":1,\"archiveStatus\":\"pending\",\"archiveJobId\":\"6f1d0f6a-1f1a-4a1a-9a1a-1a1a1a1a1a02\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:01.668Z",
+    "Scheme": "http",
+    "scenarioName": "links-archive-job-idempotent-same-url"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"url\":\"https://testbot.example.com/archive-idem\",\"name\":\"testbot idem B\",\"collection\":{\"name\":\"Unorganized\"},\"tags\":[]}",
+    "ResponseBody": "{\"response\":{\"id\":9202,\"name\":\"testbot idem B\",\"url\":\"https://testbot.example.com/archive-idem\",\"type\":\"url\",\"collectionId\":1,\"archiveStatus\":\"pending\",\"archiveJobId\":\"6f1d0f6a-1f1a-4a1a-9a1a-1a1a1a1a1a02\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:02.668Z",
+    "Scheme": "http",
+    "scenarioName": "links-archive-job-idempotent-same-url"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkIds\":[9201,9202]}",
+    "ResponseBody": "{\"response\":{\"count\":2}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:03.668Z",
+    "Scheme": "http",
+    "scenarioName": "links-archive-job-idempotent-same-url"
+  }
+]
