@@ -4,7 +4,6 @@ import { BasePage } from "./base/page";
 export class LoginPage extends BasePage {
   submitLoginButton: Locator;
   loginForm: Locator;
-  registerLink: Locator;
   passwordInput: Locator;
   usernameInput: Locator;
 
@@ -14,8 +13,6 @@ export class LoginPage extends BasePage {
     this.submitLoginButton = page.getByTestId("submit-login-button");
 
     this.loginForm = page.getByTestId("login-form");
-
-    this.registerLink = page.getByTestId("register-link");
 
     this.passwordInput = page.getByTestId("password-input");
     this.usernameInput = page.getByTestId("username-input");
