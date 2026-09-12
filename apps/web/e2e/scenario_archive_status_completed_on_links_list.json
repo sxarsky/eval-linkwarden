@@ -1,0 +1,114 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"testbot-archive-status-list\",\"url\":\"http://127.0.0.1:9/testbot-archive-status-list\",\"collection\":{\"name\":\"testbot-archive-status-list-col\"},\"tags\":[]}",
+    "ResponseBody": "{\"response\":{\"id\":5353,\"name\":\"testbot-archive-status-list\",\"type\":\"url\",\"url\":\"http://127.0.0.1:9/testbot-archive-status-list\",\"description\":\"\",\"collectionId\":8881,\"preview\":\"unavailable\",\"image\":\"unavailable\",\"pdf\":\"unavailable\",\"readable\":\"unavailable\",\"monolith\":\"unavailable\",\"lastPreserved\":\"2026-09-12T20:33:51.346Z\",\"tags\":[],\"collection\":{\"id\":8881,\"name\":\"testbot-archive-status-list-col\",\"ownerId\":1}}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:41:42.518Z",
+    "Scheme": "http",
+    "scenarioName": "archive_status_completed_on_links_list"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":[{\"id\":5353,\"name\":\"testbot-archive-status-list\",\"url\":\"http://127.0.0.1:9/testbot-archive-status-list\",\"lastPreserved\":\"2026-09-12T20:33:51.346Z\",\"archiveStatus\":\"completed\",\"collectionId\":8881,\"tags\":[]}]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/links",
+    "QueryParams": {
+      "sort": [
+        "0"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:41:43.518Z",
+    "Scheme": "http",
+    "scenarioName": "archive_status_completed_on_links_list"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":5353,\"name\":\"testbot-archive-status-list\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/links/5353",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:41:44.518Z",
+    "Scheme": "http",
+    "scenarioName": "archive_status_completed_on_links_list"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":8881,\"name\":\"testbot-archive-status-list-col\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/8881",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:41:45.518Z",
+    "Scheme": "http",
+    "scenarioName": "archive_status_completed_on_links_list"
+  }
+]
