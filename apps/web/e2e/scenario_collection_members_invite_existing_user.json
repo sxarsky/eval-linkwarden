@@ -1,0 +1,221 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Testbot Invitee\",\"username\":\"testbot-invitee\",\"password\":\"testbotpassword123\",\"email\":\"testbot-invitee@example.com\"}",
+    "ResponseBody": "{\"response\":{\"id\":9101,\"name\":\"Testbot Invitee\",\"username\":\"testbot-invitee\",\"email\":\"testbot-invitee@example.com\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/users",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:51:43.752Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_invite_existing_user",
+    "UniqueFields": [
+      "username"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Testbot Invite Fixture\",\"description\":\"testbot invite fixture\"}",
+    "ResponseBody": "{\"response\":{\"id\":9201,\"name\":\"Testbot Invite Fixture\",\"ownerId\":1,\"members\":[]}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:51:44.752Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_invite_existing_user"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":[]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/collections/9201/members",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:51:45.752Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_invite_existing_user"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"role\":\"viewer\"}",
+    "ResponseBody": "{\"response\":\"email is required.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections/9201/members",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:51:46.752Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_invite_existing_user"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"email\":\"nobody@nowhere.invalid\"}",
+    "ResponseBody": "{\"response\":\"User not found.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections/9201/members",
+    "QueryParams": {},
+    "StatusCode": 404,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:51:47.752Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_invite_existing_user"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"email\":\"testbot-invitee@example.com\"}",
+    "ResponseBody": "{\"response\":{\"userId\":9101,\"collectionId\":9201,\"canCreate\":false,\"canUpdate\":false,\"canDelete\":false,\"user\":{\"id\":9101,\"name\":\"Testbot Invitee\",\"email\":\"testbot-invitee@example.com\"}}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections/9201/members",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:51:48.752Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_invite_existing_user"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":[{\"userId\":9101,\"collectionId\":9201,\"user\":{\"id\":9101,\"name\":\"Testbot Invitee\",\"email\":\"testbot-invitee@example.com\"}}]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/collections/9201/members",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:51:49.752Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_invite_existing_user"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":9201}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/9201",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:51:50.752Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_invite_existing_user"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"User account and all related data deleted successfully.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/users/9101",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:51:51.752Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_invite_existing_user"
+  }
+]

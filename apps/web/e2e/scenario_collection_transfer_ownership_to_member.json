@@ -1,0 +1,221 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Testbot New Owner\",\"username\":\"testbot-new-owner\",\"password\":\"testbotpassword123\"}",
+    "ResponseBody": "{\"response\":{\"id\":6184,\"name\":\"Testbot New Owner\",\"username\":\"testbot-new-owner\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/users",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:52:11.084Z",
+    "Scheme": "http",
+    "scenarioName": "collection_transfer_ownership_to_member",
+    "UniqueFields": [
+      "username"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Testbot Transfer Fixture\",\"description\":\"testbot transfer fixture\"}",
+    "ResponseBody": "{\"response\":{\"id\":6295,\"name\":\"Testbot Transfer Fixture\",\"ownerId\":4073,\"members\":[]}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:52:12.084Z",
+    "Scheme": "http",
+    "scenarioName": "collection_transfer_ownership_to_member"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"id\":6295,\"name\":\"Testbot Transfer Fixture\",\"description\":\"testbot transfer fixture\",\"color\":\"#0ea5e9\",\"isPublic\":false,\"ownerId\":4073,\"members\":[{\"userId\":6184,\"canCreate\":false,\"canUpdate\":false,\"canDelete\":false}]}",
+    "ResponseBody": "{\"response\":{\"id\":6295,\"name\":\"Testbot Transfer Fixture\",\"ownerId\":4073}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PUT",
+    "Path": "/api/v1/collections/6295",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:52:13.084Z",
+    "Scheme": "http",
+    "scenarioName": "collection_transfer_ownership_to_member"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":[{\"userId\":6184,\"collectionId\":6295,\"user\":{\"id\":6184,\"name\":\"Testbot New Owner\"}}]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/collections/6295/members",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:52:14.084Z",
+    "Scheme": "http",
+    "scenarioName": "collection_transfer_ownership_to_member"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"Method not allowed.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/collections/6295/transfer",
+    "QueryParams": {},
+    "StatusCode": 405,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:52:15.084Z",
+    "Scheme": "http",
+    "scenarioName": "collection_transfer_ownership_to_member"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"userId\":6184}",
+    "ResponseBody": "{\"response\":\"toUserId is required.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections/6295/transfer",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:52:16.084Z",
+    "Scheme": "http",
+    "scenarioName": "collection_transfer_ownership_to_member"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"toUserId\":999999}",
+    "ResponseBody": "{\"response\":\"Transfer target must already be a member of the collection.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections/6295/transfer",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:52:17.084Z",
+    "Scheme": "http",
+    "scenarioName": "collection_transfer_ownership_to_member"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"toUserId\":6184}",
+    "ResponseBody": "{\"response\":{\"id\":6295,\"name\":\"Testbot Transfer Fixture\",\"ownerId\":6184}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections/6295/transfer",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:52:18.084Z",
+    "Scheme": "http",
+    "scenarioName": "collection_transfer_ownership_to_member"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"User account and all related data deleted successfully.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/users/6184",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:52:19.084Z",
+    "Scheme": "http",
+    "scenarioName": "collection_transfer_ownership_to_member"
+  }
+]
