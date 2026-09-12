@@ -5,8 +5,6 @@ export class RegistrationPage extends BasePage {
   registerButton: Locator;
   registrationForm: Locator;
 
-  loginLink: Locator;
-
   displayNameInput: Locator;
   passwordConfirmInput: Locator;
   passwordInput: Locator;
@@ -17,8 +15,6 @@ export class RegistrationPage extends BasePage {
 
     this.registerButton = page.getByTestId("register-button");
     this.registrationForm = page.getByTestId("registration-form");
-
-    this.loginLink = page.getByTestId("login-link");
 
     this.displayNameInput = page.getByTestId("display-name-input");
     this.passwordConfirmInput = page.getByTestId("password-confirm-input");
