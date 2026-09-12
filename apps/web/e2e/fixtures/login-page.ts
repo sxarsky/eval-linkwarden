@@ -11,7 +11,7 @@ export class LoginPage extends BasePage {
   constructor(page: Page) {
     super(page);
 
-    this.submitLoginButton = page.getByTestId("submit-login-button");
+    this.submitLoginButton = page.getByTestId("login-submit-button");
 
     this.loginForm = page.getByTestId("login-form");
 
