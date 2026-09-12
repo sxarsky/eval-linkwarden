@@ -1,0 +1,195 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"tb-transfer-integrity\"}",
+    "ResponseBody": "{\"response\":{\"id\":7431,\"name\":\"tb-transfer-integrity\",\"ownerId\":1,\"parentId\":null,\"isPublic\":false,\"members\":[]}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:47:37.400Z",
+    "Scheme": "http",
+    "scenarioName": "transfer-preserves-former-owner-access"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"TB Successor\",\"username\":\"tbsuccessor\",\"email\":\"tbsuccessor@example.com\",\"password\":\"tbsuccessorpassword123\"}",
+    "ResponseBody": "{\"response\":{\"id\":8842,\"name\":\"TB Successor\",\"username\":\"tbsuccessor\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/users",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:47:38.400Z",
+    "Scheme": "http",
+    "scenarioName": "transfer-preserves-former-owner-access",
+    "UniqueFields": [
+      "username",
+      "email"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"id\":7431,\"name\":\"tb-transfer-integrity\",\"members\":[{\"userId\":8842,\"canCreate\":false,\"canUpdate\":false,\"canDelete\":false}]}",
+    "ResponseBody": "{\"response\":{\"id\":7431,\"name\":\"tb-transfer-integrity\",\"ownerId\":1,\"members\":[{\"userId\":8842,\"collectionId\":7431,\"canCreate\":false,\"canUpdate\":false,\"canDelete\":false}]}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PUT",
+    "Path": "/api/v1/collections/7431",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:47:39.400Z",
+    "Scheme": "http",
+    "scenarioName": "transfer-preserves-former-owner-access"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"toUserId\":8842}",
+    "ResponseBody": "{\"response\":{\"id\":7431,\"name\":\"tb-transfer-integrity\",\"ownerId\":8842}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections/7431/transfer",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:47:40.400Z",
+    "Scheme": "http",
+    "scenarioName": "transfer-preserves-former-owner-access"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"Only the owner can manage members.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/collections/7431/members",
+    "QueryParams": {},
+    "StatusCode": 403,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:47:41.400Z",
+    "Scheme": "http",
+    "scenarioName": "transfer-preserves-former-owner-access"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":[{\"id\":7431,\"name\":\"tb-transfer-integrity\",\"ownerId\":8842}]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/collections",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:47:42.400Z",
+    "Scheme": "http",
+    "scenarioName": "transfer-preserves-former-owner-access"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/users/8842",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:47:43.400Z",
+    "Scheme": "http",
+    "scenarioName": "transfer-preserves-former-owner-access"
+  }
+]

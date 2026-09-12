@@ -1,0 +1,226 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"tb-members-lifecycle\"}",
+    "ResponseBody": "{\"response\":{\"id\":5317,\"name\":\"tb-members-lifecycle\",\"ownerId\":1,\"parentId\":null,\"isPublic\":false,\"members\":[]}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:47:47.869Z",
+    "Scheme": "http",
+    "scenarioName": "collection-members-list-and-remove"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"TB Member\",\"username\":\"tbmember\",\"email\":\"tbmember@example.com\",\"password\":\"tbmemberpassword123\"}",
+    "ResponseBody": "{\"response\":{\"id\":9264,\"name\":\"TB Member\",\"username\":\"tbmember\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/users",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:47:48.869Z",
+    "Scheme": "http",
+    "scenarioName": "collection-members-list-and-remove",
+    "UniqueFields": [
+      "username",
+      "email"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"id\":5317,\"name\":\"tb-members-lifecycle\",\"members\":[{\"userId\":9264,\"canCreate\":false,\"canUpdate\":false,\"canDelete\":false}]}",
+    "ResponseBody": "{\"response\":{\"id\":5317,\"name\":\"tb-members-lifecycle\",\"ownerId\":1,\"members\":[{\"userId\":9264,\"collectionId\":5317,\"canCreate\":false,\"canUpdate\":false,\"canDelete\":false}]}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PUT",
+    "Path": "/api/v1/collections/5317",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:47:49.869Z",
+    "Scheme": "http",
+    "scenarioName": "collection-members-list-and-remove"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":[{\"userId\":9264,\"collectionId\":5317,\"canCreate\":false,\"canUpdate\":false,\"canDelete\":false,\"user\":{\"id\":9264,\"name\":\"TB Member\",\"email\":null}}]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/collections/5317/members",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:47:50.869Z",
+    "Scheme": "http",
+    "scenarioName": "collection-members-list-and-remove"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"Member removed.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/5317/members",
+    "QueryParams": {
+      "userId": [
+        "9264"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:47:51.869Z",
+    "Scheme": "http",
+    "scenarioName": "collection-members-list-and-remove"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":[]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/collections/5317/members",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:47:52.869Z",
+    "Scheme": "http",
+    "scenarioName": "collection-members-list-and-remove"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/users/9264",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:47:53.869Z",
+    "Scheme": "http",
+    "scenarioName": "collection-members-list-and-remove"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/5317",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:47:54.869Z",
+    "Scheme": "http",
+    "scenarioName": "collection-members-list-and-remove"
+  }
+]
