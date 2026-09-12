@@ -1,0 +1,249 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Bulk archive validation link\",\"url\":\"https://example.com/bulk-archive-validation\",\"type\":\"url\",\"tags\":[],\"collection\":{\"name\":\"Bulk Archive Validation\"}}",
+    "ResponseBody": "{\"response\":{\"id\":4243,\"name\":\"Bulk archive validation link\",\"url\":\"https://example.com/bulk-archive-validation\",\"type\":\"url\",\"collectionId\":778,\"collection\":{\"id\":778,\"name\":\"Bulk Archive Validation\",\"ownerId\":1}}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:40:40.406Z",
+    "Scheme": "http",
+    "scenarioName": "bulk_archive_input_validation",
+    "UniqueFields": [
+      "url",
+      "collection.name"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkIds\":[]}",
+    "ResponseBody": "{\"response\":\"linkIds array is required.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links/bulk-archive",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:40:41.406Z",
+    "Scheme": "http",
+    "scenarioName": "bulk_archive_input_validation"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"ids\":[999000001]}",
+    "ResponseBody": "{\"response\":\"linkIds array is required.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links/bulk-archive",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:40:42.406Z",
+    "Scheme": "http",
+    "scenarioName": "bulk_archive_input_validation"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkIds\":[999000001,999000002,999000003,999000004,999000005,999000006,999000007,999000008,999000009,999000010,999000011,999000012,999000013,999000014,999000015,999000016,999000017,999000018,999000019,999000020,999000021,999000022,999000023,999000024,999000025,999000026,999000027,999000028,999000029,999000030,999000031,999000032,999000033,999000034,999000035,999000036,999000037,999000038,999000039,999000040,999000041,999000042,999000043,999000044,999000045,999000046,999000047,999000048,999000049,999000050,999000051,999000052,999000053,999000054,999000055,999000056,999000057,999000058,999000059,999000060,999000061,999000062,999000063,999000064,999000065,999000066,999000067,999000068,999000069,999000070,999000071,999000072,999000073,999000074,999000075,999000076,999000077,999000078,999000079,999000080,999000081,999000082,999000083,999000084,999000085,999000086,999000087,999000088,999000089,999000090,999000091,999000092,999000093,999000094,999000095,999000096,999000097,999000098,999000099,999000100,999000101]}",
+    "ResponseBody": "{\"response\":\"Maximum 100 links per batch.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links/bulk-archive",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:40:43.406Z",
+    "Scheme": "http",
+    "scenarioName": "bulk_archive_input_validation"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkIds\":[999000001,999000002,999000003,999000004,999000005,999000006,999000007,999000008,999000009,999000010,999000011,999000012,999000013,999000014,999000015,999000016,999000017,999000018,999000019,999000020,999000021,999000022,999000023,999000024,999000025,999000026,999000027,999000028,999000029,999000030,999000031,999000032,999000033,999000034,999000035,999000036,999000037,999000038,999000039,999000040,999000041,999000042,999000043,999000044,999000045,999000046,999000047,999000048,999000049,999000050,999000051,999000052,999000053,999000054,999000055,999000056,999000057,999000058,999000059,999000060,999000061,999000062,999000063,999000064,999000065,999000066,999000067,999000068,999000069,999000070,999000071,999000072,999000073,999000074,999000075,999000076,999000077,999000078,999000079,999000080,999000081,999000082,999000083,999000084,999000085,999000086,999000087,999000088,999000089,999000090,999000091,999000092,999000093,999000094,999000095,999000096,999000097,999000098,999000099,999000100]}",
+    "ResponseBody": "{\"response\":\"One or more links are not accessible.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links/bulk-archive",
+    "QueryParams": {},
+    "StatusCode": 403,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:40:44.406Z",
+    "Scheme": "http",
+    "scenarioName": "bulk_archive_input_validation"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkIds\":[\"abc\"]}",
+    "ResponseBody": "{\"response\":\"linkIds array is required.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links/bulk-archive",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:40:45.406Z",
+    "Scheme": "http",
+    "scenarioName": "bulk_archive_input_validation"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"Method not allowed.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/links/bulk-archive",
+    "QueryParams": {},
+    "StatusCode": 405,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:40:46.406Z",
+    "Scheme": "http",
+    "scenarioName": "bulk_archive_input_validation"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":4243}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/links/4243",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:40:47.406Z",
+    "Scheme": "http",
+    "scenarioName": "bulk_archive_input_validation"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":778}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/778",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:40:48.406Z",
+    "Scheme": "http",
+    "scenarioName": "bulk_archive_input_validation"
+  }
+]

@@ -1,0 +1,168 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Bulk archive ownership link\",\"url\":\"https://example.com/bulk-archive-ownership\",\"type\":\"url\",\"tags\":[],\"collection\":{\"name\":\"Bulk Archive Ownership\"}}",
+    "ResponseBody": "{\"response\":{\"id\":4244,\"name\":\"Bulk archive ownership link\",\"url\":\"https://example.com/bulk-archive-ownership\",\"type\":\"url\",\"collectionId\":779,\"collection\":{\"id\":779,\"name\":\"Bulk Archive Ownership\",\"ownerId\":1}}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:40:51.289Z",
+    "Scheme": "http",
+    "scenarioName": "bulk_archive_ownership_boundary",
+    "UniqueFields": [
+      "url",
+      "collection.name"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkIds\":[999999999]}",
+    "ResponseBody": "{\"response\":\"One or more links are not accessible.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links/bulk-archive",
+    "QueryParams": {},
+    "StatusCode": 403,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:40:52.289Z",
+    "Scheme": "http",
+    "scenarioName": "bulk_archive_ownership_boundary"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkIds\":[4244,999999999]}",
+    "ResponseBody": "{\"response\":\"One or more links are not accessible.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links/bulk-archive",
+    "QueryParams": {},
+    "StatusCode": 403,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:40:53.289Z",
+    "Scheme": "http",
+    "scenarioName": "bulk_archive_ownership_boundary"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkIds\":[4244,4244]}",
+    "ResponseBody": "{\"response\":{\"jobId\":\"3c7d5a19-8e42-4b6d-a1f0-27c9e5b3d806\",\"status\":\"queued\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links/bulk-archive",
+    "QueryParams": {},
+    "StatusCode": 202,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:40:54.289Z",
+    "Scheme": "http",
+    "scenarioName": "bulk_archive_ownership_boundary"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":4244}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/links/4244",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:40:55.289Z",
+    "Scheme": "http",
+    "scenarioName": "bulk_archive_ownership_boundary"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":779}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/779",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:40:56.289Z",
+    "Scheme": "http",
+    "scenarioName": "bulk_archive_ownership_boundary"
+  }
+]
