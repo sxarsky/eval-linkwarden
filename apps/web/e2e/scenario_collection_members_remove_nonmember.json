@@ -1,0 +1,178 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"username\":\"testbot-member\",\"password\":\"TestbotMember123!\",\"name\":\"Testbot Member\"}",
+    "ResponseBody": "{\"response\":{\"id\":812,\"username\":\"testbot-member\",\"name\":\"Testbot Member\",\"email\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/users",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:50:23.188Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_remove_nonmember"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"member-removal\",\"description\":\"\",\"color\":\"#0ea5e9\",\"isPublic\":false,\"members\":[]}",
+    "ResponseBody": "{\"response\":{\"id\":5317,\"name\":\"member-removal\",\"ownerId\":1,\"members\":[]}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:50:24.188Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_remove_nonmember"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"id\":5317,\"name\":\"member-removal\",\"members\":[{\"userId\":812,\"canCreate\":false,\"canUpdate\":false,\"canDelete\":false}]}",
+    "ResponseBody": "{\"response\":{\"id\":5317,\"name\":\"member-removal\",\"ownerId\":1}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PUT",
+    "Path": "/api/v1/collections/5317",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:50:25.188Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_remove_nonmember"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"Member removed.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/5317/members",
+    "QueryParams": {
+      "userId": [
+        "812"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:50:26.188Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_remove_nonmember"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":[]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/collections/5317/members",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:50:27.188Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_remove_nonmember"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"Member not found.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/5317/members",
+    "QueryParams": {
+      "userId": [
+        "999999999"
+      ]
+    },
+    "StatusCode": 404,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:50:28.188Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_remove_nonmember"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":5317}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/5317",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:50:29.188Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_remove_nonmember"
+  }
+]

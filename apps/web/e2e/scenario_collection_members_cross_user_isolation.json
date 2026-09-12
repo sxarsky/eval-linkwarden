@@ -1,0 +1,174 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"username\":\"testbot-member\",\"password\":\"TestbotMember123!\",\"name\":\"Testbot Member\"}",
+    "ResponseBody": "{\"response\":{\"id\":634,\"username\":\"testbot-member\",\"name\":\"Testbot Member\",\"email\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/users",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:50:32.422Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_cross_user_isolation"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"isolation\",\"description\":\"\",\"color\":\"#0ea5e9\",\"isPublic\":false,\"members\":[]}",
+    "ResponseBody": "{\"response\":{\"id\":7188,\"name\":\"isolation\",\"ownerId\":634,\"members\":[]}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:50:33.422Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_cross_user_isolation"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":[]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/collections/7188/members",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:50:34.422Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_cross_user_isolation"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"email\":\"no-such-user@example.com\"}",
+    "ResponseBody": "{\"response\":\"Only the owner can manage members.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections/7188/members",
+    "QueryParams": {},
+    "StatusCode": 403,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:50:35.422Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_cross_user_isolation"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"Only the owner can manage members.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/7188/members",
+    "QueryParams": {
+      "userId": [
+        "634"
+      ]
+    },
+    "StatusCode": 403,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:50:36.422Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_cross_user_isolation"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"toUserId\":1}",
+    "ResponseBody": "{\"response\":\"Only the owner can transfer ownership.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections/7188/transfer",
+    "QueryParams": {},
+    "StatusCode": 403,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:50:37.422Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_cross_user_isolation"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":7188}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/7188",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:50:38.422Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_cross_user_isolation"
+  }
+]
