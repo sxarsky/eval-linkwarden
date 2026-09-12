@@ -1,0 +1,125 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"username\":\"testbot-admin\",\"password\":\"testbotpassword123\",\"sessionName\":\"skyramp-prefs-revoked\"}",
+    "ResponseBody": "{\"response\":{\"token\":\"eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..SESSIONTOKEN\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/session",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:45.531Z",
+    "Scheme": "http",
+    "scenarioName": "preferences_rejects_revoked_session",
+    "UniqueFields": [
+      "sessionName"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":[{\"id\":4,\"name\":\"skyramp-prefs-revoked\",\"isSession\":true}]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/tokens",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:46.531Z",
+    "Scheme": "http",
+    "scenarioName": "preferences_rejects_revoked_session"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":4,\"revoked\":true}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/tokens/4",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:47.531Z",
+    "Scheme": "http",
+    "scenarioName": "preferences_rejects_revoked_session"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"Your session has expired, please log in again.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/users/me",
+    "QueryParams": {},
+    "StatusCode": 401,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:48.531Z",
+    "Scheme": "http",
+    "scenarioName": "preferences_rejects_revoked_session"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"Unauthorized.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/users/me/preferences",
+    "QueryParams": {},
+    "StatusCode": 401,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:49.531Z",
+    "Scheme": "http",
+    "scenarioName": "preferences_rejects_revoked_session"
+  }
+]
