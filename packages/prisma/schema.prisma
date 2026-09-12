@@ -70,6 +70,7 @@ model User {
   lastPickedAt            DateTime?
   acceptPromotionalEmails Boolean               @default(false)
   trialEndEmailSent       Boolean               @default(false)
+  coupons                 Coupon[]              @relation("UserCoupons")
   createdAt               DateTime              @default(now())
   updatedAt               DateTime              @default(now()) @updatedAt
 }
@@ -305,4 +306,14 @@ enum AppMigrationStatus {
   APPLIED
   PENDING
   FAILED
+}
+
+model Coupon {
+  id              Int       @id @default(autoincrement())
+  code            String    @unique
+  discountPercent Int
+  createdBy       User      @relation("UserCoupons", fields: [createdById], references: [id], onDelete: Cascade)
+  createdById     Int
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @default(now()) @updatedAt
 }
