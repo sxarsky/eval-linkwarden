@@ -1,0 +1,141 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"url\":\"https://example.com/testbot-pin-idempotent\",\"name\":\"testbot pin idempotent\",\"collection\":{\"name\":\"Testbot Pinning\"}}",
+    "ResponseBody": "{\"response\":{\"id\":4242,\"name\":\"testbot pin idempotent\",\"url\":\"https://example.com/testbot-pin-idempotent\",\"createdById\":1,\"collectionId\":7}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:36:30.750Z",
+    "Scheme": "http",
+    "scenarioName": "pin_link_idempotent_stays_pinned",
+    "UniqueFields": [
+      "url",
+      "name"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{}",
+    "ResponseBody": "{\"response\":{\"id\":4242,\"name\":\"testbot pin idempotent\",\"url\":\"https://example.com/testbot-pin-idempotent\",\"pinnedBy\":[{\"id\":1}],\"updatedAt\":\"2026-09-12T20:33:12.664Z\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PATCH",
+    "Path": "/api/v1/links/4242/pin",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:36:31.750Z",
+    "Scheme": "http",
+    "scenarioName": "pin_link_idempotent_stays_pinned"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{}",
+    "ResponseBody": "{\"response\":{\"id\":4242,\"name\":\"testbot pin idempotent\",\"url\":\"https://example.com/testbot-pin-idempotent\",\"pinnedBy\":[{\"id\":1}],\"updatedAt\":\"2026-09-12T20:33:12.664Z\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PATCH",
+    "Path": "/api/v1/links/4242/pin",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:36:32.750Z",
+    "Scheme": "http",
+    "scenarioName": "pin_link_idempotent_stays_pinned"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":4242,\"name\":\"testbot pin idempotent\",\"url\":\"https://example.com/testbot-pin-idempotent\",\"pinnedBy\":[{\"id\":1}]}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/links/4242",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:36:33.750Z",
+    "Scheme": "http",
+    "scenarioName": "pin_link_idempotent_stays_pinned"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":4242,\"name\":\"testbot pin idempotent\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/links/4242",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:36:34.750Z",
+    "Scheme": "http",
+    "scenarioName": "pin_link_idempotent_stays_pinned"
+  }
+]
