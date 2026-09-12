@@ -1,0 +1,299 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Highlights Patch Rejections\"}",
+    "ResponseBody": "{\"response\":{\"id\":511,\"name\":\"Highlights Patch Rejections\",\"ownerId\":1}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:59:30.548Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_rejects_invalid_bodies_and_ids"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"type\":\"url\",\"url\":\"https://example.com/hl-patch-reject\",\"name\":\"Highlights Patch Rejection Source\",\"collection\":{\"id\":511},\"tags\":[]}",
+    "ResponseBody": "{\"response\":{\"id\":522,\"name\":\"Highlights Patch Rejection Source\",\"url\":\"https://example.com/hl-patch-reject\",\"collectionId\":511}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:59:31.548Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_rejects_invalid_bodies_and_ids"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkId\":522,\"color\":\"yellow\",\"text\":\"Rejection passage\",\"startOffset\":0,\"endOffset\":17,\"comment\":\"original note\"}",
+    "ResponseBody": "{\"response\":{\"id\":533,\"color\":\"yellow\",\"comment\":\"original note\",\"linkId\":522,\"text\":\"Rejection passage\",\"startOffset\":0,\"endOffset\":17}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:59:32.548Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_rejects_invalid_bodies_and_ids"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"color\":\"blue\"}",
+    "ResponseBody": "{\"response\":{\"id\":533,\"color\":\"blue\",\"comment\":\"original note\",\"linkId\":522,\"text\":\"Rejection passage\",\"link\":{\"id\":522,\"name\":\"Highlights Patch Rejection Source\",\"url\":\"https://example.com/hl-patch-reject\"}}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PATCH",
+    "Path": "/api/v1/highlights/533",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:59:33.548Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_rejects_invalid_bodies_and_ids"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"text\":\"not an updatable field\"}",
+    "ResponseBody": "{\"response\":\"Error: Provide a color or a comment to update []\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PATCH",
+    "Path": "/api/v1/highlights/533",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:59:34.548Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_rejects_invalid_bodies_and_ids"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"color\":\"purple\"}",
+    "ResponseBody": "{\"response\":\"Error: Invalid option: expected one of \\\"yellow\\\"|\\\"green\\\"|\\\"blue\\\"|\\\"red\\\" [color]\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PATCH",
+    "Path": "/api/v1/highlights/533",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:59:35.548Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_rejects_invalid_bodies_and_ids"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"color\":\"red\"}",
+    "ResponseBody": "{\"response\":\"Highlight not found.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PATCH",
+    "Path": "/api/v1/highlights/999999999",
+    "QueryParams": {},
+    "StatusCode": 404,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:59:36.548Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_rejects_invalid_bodies_and_ids"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"color\":\"red\"}",
+    "ResponseBody": "{\"response\":\"Please choose a valid highlight.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PATCH",
+    "Path": "/api/v1/highlights/abc",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:59:37.548Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_rejects_invalid_bodies_and_ids"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"color\":\"yellow\",\"comment\":\"method not allowed probe\"}",
+    "ResponseBody": "{\"response\":\"Method not allowed.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PUT",
+    "Path": "/api/v1/highlights/533",
+    "QueryParams": {},
+    "StatusCode": 405,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:59:38.548Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_rejects_invalid_bodies_and_ids"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":522}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/links/522",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:59:39.548Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_rejects_invalid_bodies_and_ids"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":511}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/511",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:59:40.548Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_rejects_invalid_bodies_and_ids"
+  }
+]

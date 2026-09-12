@@ -1,0 +1,222 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Highlights Patch Happy\"}",
+    "ResponseBody": "{\"response\":{\"id\":411,\"name\":\"Highlights Patch Happy\",\"ownerId\":1}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:58:50.057Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_updates_color_and_comment"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"type\":\"url\",\"url\":\"https://example.com/hl-patch\",\"name\":\"Highlights Patch Source\",\"collection\":{\"id\":411},\"tags\":[]}",
+    "ResponseBody": "{\"response\":{\"id\":422,\"name\":\"Highlights Patch Source\",\"url\":\"https://example.com/hl-patch\",\"collectionId\":411}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:58:51.057Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_updates_color_and_comment"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkId\":422,\"color\":\"yellow\",\"text\":\"Patchable passage\",\"startOffset\":0,\"endOffset\":17,\"comment\":\"original note\"}",
+    "ResponseBody": "{\"response\":{\"id\":433,\"color\":\"yellow\",\"comment\":\"original note\",\"linkId\":422,\"text\":\"Patchable passage\",\"startOffset\":0,\"endOffset\":17}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:58:52.057Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_updates_color_and_comment"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"comment\":\"revised note\"}",
+    "ResponseBody": "{\"response\":{\"id\":433,\"color\":\"yellow\",\"comment\":\"revised note\",\"linkId\":422,\"text\":\"Patchable passage\",\"link\":{\"id\":422,\"name\":\"Highlights Patch Source\",\"url\":\"https://example.com/hl-patch\"}}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PATCH",
+    "Path": "/api/v1/highlights/433",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:58:53.057Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_updates_color_and_comment"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"color\":\"red\"}",
+    "ResponseBody": "{\"response\":{\"id\":433,\"color\":\"red\",\"comment\":\"revised note\",\"linkId\":422,\"text\":\"Patchable passage\",\"link\":{\"id\":422,\"name\":\"Highlights Patch Source\",\"url\":\"https://example.com/hl-patch\"}}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PATCH",
+    "Path": "/api/v1/highlights/433",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:58:54.057Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_updates_color_and_comment"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"highlights\":[{\"id\":433,\"color\":\"red\",\"comment\":\"revised note\",\"text\":\"Patchable passage\",\"linkId\":422,\"link\":{\"id\":422,\"name\":\"Highlights Patch Source\",\"url\":\"https://example.com/hl-patch\"}}],\"nextCursor\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {
+      "color": [
+        "red"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:58:55.057Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_updates_color_and_comment"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":422}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/links/422",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:58:56.057Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_updates_color_and_comment"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":411}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/411",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:58:57.057Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_updates_color_and_comment"
+  }
+]

@@ -1,0 +1,407 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Highlights Library Filters\"}",
+    "ResponseBody": "{\"response\":{\"id\":101,\"name\":\"Highlights Library Filters\",\"ownerId\":1}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:58:06.930Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_list_filters_and_paging"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"type\":\"url\",\"url\":\"https://example.com/hl-filters\",\"name\":\"Highlights Filters Source\",\"collection\":{\"id\":101},\"tags\":[]}",
+    "ResponseBody": "{\"response\":{\"id\":201,\"name\":\"Highlights Filters Source\",\"url\":\"https://example.com/hl-filters\",\"collectionId\":101}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:58:07.930Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_list_filters_and_paging"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkId\":201,\"color\":\"yellow\",\"text\":\"Zephyr filter alpha\",\"startOffset\":0,\"endOffset\":19,\"comment\":\"alpha note\"}",
+    "ResponseBody": "{\"response\":{\"id\":301,\"color\":\"yellow\",\"comment\":\"alpha note\",\"linkId\":201,\"text\":\"Zephyr filter alpha\",\"startOffset\":0,\"endOffset\":19}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:58:08.930Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_list_filters_and_paging"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkId\":201,\"color\":\"green\",\"text\":\"Zephyr filter beta\",\"startOffset\":20,\"endOffset\":38,\"comment\":\"beta note\"}",
+    "ResponseBody": "{\"response\":{\"id\":302,\"color\":\"green\",\"comment\":\"beta note\",\"linkId\":201,\"text\":\"Zephyr filter beta\",\"startOffset\":20,\"endOffset\":38}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:58:09.930Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_list_filters_and_paging"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkId\":201,\"color\":\"blue\",\"text\":\"Unrelated passage\",\"startOffset\":40,\"endOffset\":57,\"comment\":\"gamma note\"}",
+    "ResponseBody": "{\"response\":{\"id\":303,\"color\":\"blue\",\"comment\":\"gamma note\",\"linkId\":201,\"text\":\"Unrelated passage\",\"startOffset\":40,\"endOffset\":57}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:58:10.930Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_list_filters_and_paging"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"highlights\":[{\"id\":303,\"color\":\"blue\",\"text\":\"Unrelated passage\",\"comment\":\"gamma note\",\"linkId\":201,\"link\":{\"id\":201,\"name\":\"Highlights Filters Source\",\"url\":\"https://example.com/hl-filters\"}},{\"id\":302,\"color\":\"green\",\"text\":\"Zephyr filter beta\",\"comment\":\"beta note\",\"linkId\":201,\"link\":{\"id\":201,\"name\":\"Highlights Filters Source\",\"url\":\"https://example.com/hl-filters\"}},{\"id\":301,\"color\":\"yellow\",\"text\":\"Zephyr filter alpha\",\"comment\":\"alpha note\",\"linkId\":201,\"link\":{\"id\":201,\"name\":\"Highlights Filters Source\",\"url\":\"https://example.com/hl-filters\"}}],\"nextCursor\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:58:11.930Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_list_filters_and_paging"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"highlights\":[{\"id\":302,\"color\":\"green\",\"text\":\"Zephyr filter beta\",\"comment\":\"beta note\",\"linkId\":201,\"link\":{\"id\":201,\"name\":\"Highlights Filters Source\",\"url\":\"https://example.com/hl-filters\"}}],\"nextCursor\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {
+      "color": [
+        "green"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:58:12.930Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_list_filters_and_paging"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"highlights\":[{\"id\":302,\"color\":\"green\",\"text\":\"Zephyr filter beta\",\"comment\":\"beta note\",\"linkId\":201},{\"id\":301,\"color\":\"yellow\",\"text\":\"Zephyr filter alpha\",\"comment\":\"alpha note\",\"linkId\":201}],\"nextCursor\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {
+      "q": [
+        "Zephyr"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:58:13.930Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_list_filters_and_paging"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"highlights\":[{\"id\":302,\"color\":\"green\",\"text\":\"Zephyr filter beta\",\"comment\":\"beta note\",\"linkId\":201}],\"nextCursor\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {
+      "q": [
+        "BETA NOTE"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:58:14.930Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_list_filters_and_paging"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"highlights\":[],\"nextCursor\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {
+      "q": [
+        "nothingmatchesthis"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:58:15.930Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_list_filters_and_paging"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"highlights\":[{\"id\":303,\"color\":\"blue\",\"text\":\"Unrelated passage\",\"linkId\":201},{\"id\":302,\"color\":\"green\",\"text\":\"Zephyr filter beta\",\"linkId\":201}],\"nextCursor\":302}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {
+      "take": [
+        "2"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:58:16.930Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_list_filters_and_paging"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"highlights\":[{\"id\":301,\"color\":\"yellow\",\"text\":\"Zephyr filter alpha\",\"linkId\":201}],\"nextCursor\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {
+      "take": [
+        "2"
+      ],
+      "cursor": [
+        "302"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:58:17.930Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_list_filters_and_paging"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":201}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/links/201",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:58:18.930Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_list_filters_and_paging"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":101}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/101",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:58:19.930Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_list_filters_and_paging"
+  }
+]
