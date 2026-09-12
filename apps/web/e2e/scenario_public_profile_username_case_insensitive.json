@@ -1,0 +1,50 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":1,\"name\":\"Testbot Admin\",\"username\":\"testbot-admin\",\"image\":null,\"createdAt\":\"2026-09-12T19:50:02.956Z\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/users/testbot-admin",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:01:39.149Z",
+    "Scheme": "http",
+    "scenarioName": "public_profile_username_case_insensitive"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":1,\"name\":\"Testbot Admin\",\"username\":\"testbot-admin\",\"image\":null,\"createdAt\":\"2026-09-12T19:50:02.956Z\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/users/TESTBOT-ADMIN",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:01:40.149Z",
+    "Scheme": "http",
+    "scenarioName": "public_profile_username_case_insensitive"
+  }
+]

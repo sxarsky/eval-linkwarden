@@ -1,0 +1,74 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Numeric Username Probe\",\"username\":\"4242424242\",\"password\":\"probepassword123\"}",
+    "ResponseBody": "{\"response\":{\"id\":90731,\"name\":\"Numeric Username Probe\",\"username\":\"4242424242\",\"isPrivate\":false}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/users",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:01:53.535Z",
+    "Scheme": "http",
+    "scenarioName": "public_profile_numeric_username"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":90731,\"name\":\"Numeric Username Probe\",\"username\":\"4242424242\",\"image\":null,\"createdAt\":\"2026-09-12T19:53:13.607Z\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/users/4242424242",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:01:54.535Z",
+    "Scheme": "http",
+    "scenarioName": "public_profile_numeric_username"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"password\":\"testbotpassword123\"}",
+    "ResponseBody": "{\"response\":\"User account and all related data deleted successfully.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/users/90731",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:01:55.535Z",
+    "Scheme": "http",
+    "scenarioName": "public_profile_numeric_username"
+  }
+]

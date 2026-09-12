@@ -1,0 +1,98 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":1,\"name\":\"Testbot Admin\",\"username\":\"testbot-admin\",\"image\":null,\"createdAt\":\"2026-09-12T19:50:02.956Z\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/users/testbot-admin",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:01:46.190Z",
+    "Scheme": "http",
+    "scenarioName": "public_profile_hides_private_user"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Testbot Admin\",\"username\":\"testbot-admin\",\"isPrivate\":true,\"password\":\"testbotpassword123\"}",
+    "ResponseBody": "{\"response\":{\"id\":1,\"username\":\"testbot-admin\",\"isPrivate\":true}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PUT",
+    "Path": "/api/v1/users/1",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:01:47.190Z",
+    "Scheme": "http",
+    "scenarioName": "public_profile_hides_private_user"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"User not found.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/users/testbot-admin",
+    "QueryParams": {},
+    "StatusCode": 404,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:01:48.190Z",
+    "Scheme": "http",
+    "scenarioName": "public_profile_hides_private_user"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Testbot Admin\",\"username\":\"testbot-admin\",\"isPrivate\":false,\"password\":\"testbotpassword123\"}",
+    "ResponseBody": "{\"response\":{\"id\":1,\"username\":\"testbot-admin\",\"isPrivate\":false}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PUT",
+    "Path": "/api/v1/users/1",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:01:49.190Z",
+    "Scheme": "http",
+    "scenarioName": "public_profile_hides_private_user"
+  }
+]
