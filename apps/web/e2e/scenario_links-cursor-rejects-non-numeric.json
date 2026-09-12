@@ -1,0 +1,117 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\": \"tb-badcursor-a\", \"url\": \"https://example.com/tb-badcursor-a\", \"description\": \"\", \"type\": \"url\", \"tags\": [], \"collection\": {\"name\": \"Unorganized\"}}",
+    "ResponseBody": "{\"response\": {\"id\": \"2e7b5a13-84c9-4d60-a1f3-9b06c75e2d41\", \"name\": \"tb-badcursor-a\", \"url\": \"https://example.com/tb-badcursor-a\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:37:19.256Z",
+    "Scheme": "http",
+    "scenarioName": "links-cursor-rejects-non-numeric"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\": \"tb-badcursor-b\", \"url\": \"https://example.com/tb-badcursor-b\", \"description\": \"\", \"type\": \"url\", \"tags\": [], \"collection\": {\"name\": \"Unorganized\"}}",
+    "ResponseBody": "{\"response\": {\"id\": \"c15d9e64-3a72-4b08-8e95-71f2d0a63c58\", \"name\": \"tb-badcursor-b\", \"url\": \"https://example.com/tb-badcursor-b\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:37:20.256Z",
+    "Scheme": "http",
+    "scenarioName": "links-cursor-rejects-non-numeric"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\": \"Invalid cursor provided.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/links",
+    "QueryParams": {
+      "sort": [
+        "0"
+      ],
+      "cursor": [
+        "notanumber"
+      ]
+    },
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:37:21.256Z",
+    "Scheme": "http",
+    "scenarioName": "links-cursor-rejects-non-numeric"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkIds\": [\"2e7b5a13-84c9-4d60-a1f3-9b06c75e2d41\", \"c15d9e64-3a72-4b08-8e95-71f2d0a63c58\"]}",
+    "ResponseBody": "{\"response\": {\"count\": 2}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:37:22.256Z",
+    "Scheme": "http",
+    "scenarioName": "links-cursor-rejects-non-numeric"
+  }
+]

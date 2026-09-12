@@ -1,0 +1,148 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\": \"tb-page-a\", \"url\": \"https://example.com/tb-page-a\", \"description\": \"\", \"type\": \"url\", \"tags\": [], \"collection\": {\"name\": \"Unorganized\"}}",
+    "ResponseBody": "{\"response\": {\"id\": \"6f3a1c72-9d84-4e51-b2a7-0c58e3d91f46\", \"name\": \"tb-page-a\", \"url\": \"https://example.com/tb-page-a\", \"collectionId\": 1}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:37:09.013Z",
+    "Scheme": "http",
+    "scenarioName": "links-cursor-pagination-replaces-export"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\": \"tb-page-b\", \"url\": \"https://example.com/tb-page-b\", \"description\": \"\", \"type\": \"url\", \"tags\": [], \"collection\": {\"name\": \"Unorganized\"}}",
+    "ResponseBody": "{\"response\": {\"id\": \"b8c41d09-72e5-4a36-9f10-5d27ae64c3b8\", \"name\": \"tb-page-b\", \"url\": \"https://example.com/tb-page-b\", \"collectionId\": 1}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:37:10.013Z",
+    "Scheme": "http",
+    "scenarioName": "links-cursor-pagination-replaces-export"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\": [{\"id\": \"b8c41d09-72e5-4a36-9f10-5d27ae64c3b8\", \"name\": \"tb-page-b\"}, {\"id\": \"6f3a1c72-9d84-4e51-b2a7-0c58e3d91f46\", \"name\": \"tb-page-a\"}]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/links",
+    "QueryParams": {
+      "sort": [
+        "0"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:37:11.013Z",
+    "Scheme": "http",
+    "scenarioName": "links-cursor-pagination-replaces-export"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\": [{\"id\": \"6f3a1c72-9d84-4e51-b2a7-0c58e3d91f46\", \"name\": \"tb-page-a\"}]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/links",
+    "QueryParams": {
+      "sort": [
+        "0"
+      ],
+      "cursor": [
+        "b8c41d09-72e5-4a36-9f10-5d27ae64c3b8"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:37:12.013Z",
+    "Scheme": "http",
+    "scenarioName": "links-cursor-pagination-replaces-export"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkIds\": [\"6f3a1c72-9d84-4e51-b2a7-0c58e3d91f46\", \"b8c41d09-72e5-4a36-9f10-5d27ae64c3b8\"]}",
+    "ResponseBody": "{\"response\": {\"count\": 2}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:37:13.013Z",
+    "Scheme": "http",
+    "scenarioName": "links-cursor-pagination-replaces-export"
+  }
+]
