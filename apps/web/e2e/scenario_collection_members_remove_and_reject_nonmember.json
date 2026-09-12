@@ -1,0 +1,329 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Testbot Removal Member\",\"username\":\"testbot-removal-member\",\"password\":\"testbotpassword123\"}",
+    "ResponseBody": "{\"response\":{\"id\":7311,\"name\":\"Testbot Removal Member\",\"username\":\"testbot-removal-member\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/users",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:51:58.521Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_remove_and_reject_nonmember",
+    "UniqueFields": [
+      "username"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Testbot Removal Fixture\",\"description\":\"testbot removal fixture\"}",
+    "ResponseBody": "{\"response\":{\"id\":7422,\"name\":\"Testbot Removal Fixture\",\"ownerId\":5933,\"members\":[]}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:51:59.521Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_remove_and_reject_nonmember"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"id\":7422,\"name\":\"Testbot Removal Fixture\",\"description\":\"testbot removal fixture\",\"color\":\"#0ea5e9\",\"isPublic\":false,\"ownerId\":5933,\"members\":[{\"userId\":7311,\"canCreate\":false,\"canUpdate\":false,\"canDelete\":false}]}",
+    "ResponseBody": "{\"response\":{\"id\":7422,\"name\":\"Testbot Removal Fixture\",\"ownerId\":5933}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PUT",
+    "Path": "/api/v1/collections/7422",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:52:00.521Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_remove_and_reject_nonmember"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":[{\"userId\":7311,\"collectionId\":7422,\"user\":{\"id\":7311,\"name\":\"Testbot Removal Member\"}}]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/collections/7422/members",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:52:01.521Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_remove_and_reject_nonmember"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"Invalid collection ID.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/collections/abc/members",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:52:02.521Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_remove_and_reject_nonmember"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"Collection not found.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/collections/999999/members",
+    "QueryParams": {},
+    "StatusCode": 404,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:52:03.521Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_remove_and_reject_nonmember"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"userId query param is required.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/7422/members",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:52:04.521Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_remove_and_reject_nonmember"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"Owner cannot remove themselves.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/7422/members",
+    "QueryParams": {
+      "userId": [
+        "5933"
+      ]
+    },
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:52:05.521Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_remove_and_reject_nonmember"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"Member removed.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/7422/members",
+    "QueryParams": {
+      "userId": [
+        "7311"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:52:06.521Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_remove_and_reject_nonmember"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":[]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/collections/7422/members",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:52:07.521Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_remove_and_reject_nonmember"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"Member not found.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/7422/members",
+    "QueryParams": {
+      "userId": [
+        "999999"
+      ]
+    },
+    "StatusCode": 404,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:52:08.521Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_remove_and_reject_nonmember"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":7422}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/7422",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:52:09.521Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_remove_and_reject_nonmember"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"User account and all related data deleted successfully.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/users/7311",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:52:10.521Z",
+    "Scheme": "http",
+    "scenarioName": "collection_members_remove_and_reject_nonmember"
+  }
+]
