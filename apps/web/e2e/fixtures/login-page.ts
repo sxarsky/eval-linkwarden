@@ -17,8 +17,8 @@ export class LoginPage extends BasePage {
 
     this.registerLink = page.getByTestId("register-link");
 
-    this.passwordInput = page.getByTestId("password-input");
-    this.usernameInput = page.getByTestId("username-input");
+    this.passwordInput = page.getByTestId("password-field");
+    this.usernameInput = page.getByTestId("username-field");
   }
 
   async goto() {
