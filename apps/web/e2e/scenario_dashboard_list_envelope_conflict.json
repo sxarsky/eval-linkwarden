@@ -1,0 +1,118 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"type\":\"url\",\"url\":\"https://dashboard-envelope-one.example.com/a\",\"name\":\"Dashboard Envelope Link One\",\"collection\":{\"name\":\"Dashboard Envelope Collection\"},\"tags\":[]}",
+    "ResponseBody": "{\"response\":{\"id\":6111,\"name\":\"Dashboard Envelope Link One\",\"url\":\"https://dashboard-envelope-one.example.com/a\",\"collectionId\":6211,\"type\":\"url\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:44:13.301Z",
+    "Scheme": "http",
+    "scenarioName": "dashboard_list_envelope_conflict",
+    "UniqueFields": [
+      "url",
+      "collection.name"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"data\":[{\"name\":\"Dashboard Envelope Link One\"}],\"meta\":{\"total\":1,\"cursor\":null}}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/dashboard",
+    "QueryParams": {
+      "sort": [
+        "0"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:44:14.301Z",
+    "Scheme": "http",
+    "scenarioName": "dashboard_list_envelope_conflict"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkIds\":[6111]}",
+    "ResponseBody": "{\"response\":{\"count\":1}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:44:15.301Z",
+    "Scheme": "http",
+    "scenarioName": "dashboard_list_envelope_conflict"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":6211,\"name\":\"Dashboard Envelope Collection\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/6211",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:44:16.301Z",
+    "Scheme": "http",
+    "scenarioName": "dashboard_list_envelope_conflict"
+  }
+]

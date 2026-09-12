@@ -1,0 +1,121 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"type\":\"url\",\"url\":\"https://filter-bypass-one.example.com/a\",\"name\":\"Filter Bypass Link One\",\"collection\":{\"name\":\"Filter Bypass Collection\"},\"tags\":[]}",
+    "ResponseBody": "{\"response\":{\"id\":5111,\"name\":\"Filter Bypass Link One\",\"url\":\"https://filter-bypass-one.example.com/a\",\"collectionId\":5211,\"type\":\"url\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:44:05.316Z",
+    "Scheme": "http",
+    "scenarioName": "links_list_collection_filter_bypass",
+    "UniqueFields": [
+      "url",
+      "collection.name"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"data\":[],\"meta\":{\"total\":0,\"cursor\":null}}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/links",
+    "QueryParams": {
+      "sort": [
+        "0"
+      ],
+      "collectionId": [
+        "abc"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:44:06.316Z",
+    "Scheme": "http",
+    "scenarioName": "links_list_collection_filter_bypass"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkIds\":[5111]}",
+    "ResponseBody": "{\"response\":{\"count\":1}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:44:07.316Z",
+    "Scheme": "http",
+    "scenarioName": "links_list_collection_filter_bypass"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":5211,\"name\":\"Filter Bypass Collection\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/5211",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:44:08.316Z",
+    "Scheme": "http",
+    "scenarioName": "links_list_collection_filter_bypass"
+  }
+]
