@@ -78,6 +78,8 @@ jobs:
           cache-to: type=gha,mode=max
 
       - uses: skyramp/testbot@56fac3cc7b777cd08598ed7a7586f8d9733f3507 # v0.11.11
+        env:
+          SKYRAMP_FEATURE_UTILS_REUSE: "1"
         with:
           skyrampMcpVersion: "0.4.1-rc.1"
           skyrampExecutorVersion: "v1.3.44"
