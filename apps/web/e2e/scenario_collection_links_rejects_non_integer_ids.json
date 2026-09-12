@@ -1,0 +1,122 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"tb-nonint-collection\",\"description\":\"\",\"color\":\"#0ea5e9\"}",
+    "ResponseBody": "{\"response\":{\"id\":918273661,\"name\":\"tb-nonint-collection\",\"description\":\"\",\"color\":\"#0ea5e9\",\"ownerId\":1}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:46:43.343Z",
+    "Scheme": "http",
+    "scenarioName": "collection_links_rejects_non_integer_ids"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkId\":\"2147480000\"}",
+    "ResponseBody": "{\"response\":\"linkId must be an integer.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections/918273661/links",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:46:44.343Z",
+    "Scheme": "http",
+    "scenarioName": "collection_links_rejects_non_integer_ids"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkId\":2147480000.9}",
+    "ResponseBody": "{\"response\":\"linkId must be an integer.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections/918273661/links",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:46:45.343Z",
+    "Scheme": "http",
+    "scenarioName": "collection_links_rejects_non_integer_ids"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkId\":2147480000}",
+    "ResponseBody": "{\"response\":\"Invalid collection ID.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections/2147480001.5/links",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:46:46.343Z",
+    "Scheme": "http",
+    "scenarioName": "collection_links_rejects_non_integer_ids"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":918273661,\"name\":\"tb-nonint-collection\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/918273661",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:46:47.343Z",
+    "Scheme": "http",
+    "scenarioName": "collection_links_rejects_non_integer_ids"
+  }
+]
