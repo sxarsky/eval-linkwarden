@@ -1,0 +1,83 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"url\":\"https://testbot.example.com/archive-enqueue-1\",\"name\":\"testbot archive enqueue\",\"collection\":{\"name\":\"Unorganized\"},\"tags\":[]}",
+    "ResponseBody": "{\"response\":{\"id\":9101,\"name\":\"testbot archive enqueue\",\"url\":\"https://testbot.example.com/archive-enqueue-1\",\"type\":\"url\",\"collectionId\":1,\"archiveStatus\":\"pending\",\"archiveJobId\":\"6f1d0f6a-1f1a-4a1a-9a1a-1a1a1a1a1a01\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:42:54.660Z",
+    "Scheme": "http",
+    "scenarioName": "links-archive-job-enqueued-on-create"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"testbot archive no url\",\"collection\":{\"name\":\"Unorganized\"},\"tags\":[]}",
+    "ResponseBody": "{\"response\":{\"id\":9102,\"name\":\"testbot archive no url\",\"url\":null,\"type\":\"url\",\"collectionId\":1}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:42:55.660Z",
+    "Scheme": "http",
+    "scenarioName": "links-archive-job-enqueued-on-create"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkIds\":[9101,9102]}",
+    "ResponseBody": "{\"response\":{\"count\":2}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:42:56.660Z",
+    "Scheme": "http",
+    "scenarioName": "links-archive-job-enqueued-on-create"
+  }
+]

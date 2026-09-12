@@ -1,0 +1,83 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"url\":\"https://testbot.example.com/archive-status-readback\",\"name\":\"testbot status readback\",\"collection\":{\"name\":\"Unorganized\"},\"tags\":[]}",
+    "ResponseBody": "{\"response\":{\"id\":9301,\"name\":\"testbot status readback\",\"url\":\"https://testbot.example.com/archive-status-readback\",\"type\":\"url\",\"collectionId\":1,\"archiveStatus\":\"pending\",\"archiveJobId\":\"6f1d0f6a-1f1a-4a1a-9a1a-1a1a1a1a1a03\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:08.310Z",
+    "Scheme": "http",
+    "scenarioName": "links-archive-status-readable-after-create"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":9301,\"name\":\"testbot status readback\",\"url\":\"https://testbot.example.com/archive-status-readback\",\"type\":\"url\",\"collectionId\":1,\"archiveStatus\":\"pending\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/links/9301",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:09.310Z",
+    "Scheme": "http",
+    "scenarioName": "links-archive-status-readable-after-create"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkIds\":[9301]}",
+    "ResponseBody": "{\"response\":{\"count\":1}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:43:10.310Z",
+    "Scheme": "http",
+    "scenarioName": "links-archive-status-readable-after-create"
+  }
+]
