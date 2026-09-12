@@ -1,0 +1,42 @@
+# Skyramp Workspace Configuration
+workspace:
+  repoName: sxarsky/eval-linkwarden
+  repoUrl: https://github.com/sxarsky/eval-linkwarden.git
+metadata:
+  schemaVersion: v1
+  executorVersion: v1.3.36
+  createdAt: "2026-07-29T07:02:41.010Z"
+  updatedAt: "2026-07-29T07:02:41.011Z"
+services:
+  - serviceName: linkwarden
+    language: typescript
+    framework: playwright
+    testDirectory: apps/web/e2e
+    api:
+      authType: bearer
+      authHeader: Authorization
+      authScheme: Bearer
+      baseUrl: http://localhost:3000
+    runtimeDetails:
+      serverStartCommand: bash .skyramp/sut/setup.sh
+      serverStopCommand: docker compose -f .skyramp/sut/docker-compose.testbot.yml --project-directory . down -v
+      runtime: docker
+      testSuites:
+        - framework: playwright
+          testRunCommand: npx playwright test --config apps/web/playwright.config.ts
+          testEnv:
+            TEST_USERNAME: test
+            TEST_PASSWORD: password
+            CI: "true"
+          pathGlobs:
+            - apps/web/e2e/**
+          canaryStatus: proven
+          canaryDetail: 4 Playwright login tests passed against the Docker SUT
+        - framework: vitest
+          testRunCommand: yarn vitest run
+          pathGlobs:
+            - apps/web/**/*.test.ts
+            - apps/web/**/*.test.tsx
+            - packages/**/*.test.ts
+          canaryStatus: proven
+          canaryDetail: 2 in-process unit tests passed (no SUT required)
