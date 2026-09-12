@@ -311,16 +311,6 @@ export default function Register({
 
             {displayLoginExternalButton()}
             <div>
-              <div className="text-neutral text-center flex items-baseline gap-1 justify-center">
-                <p className="w-fit text-neutral">{t("already_registered")}</p>
-                <Link
-                  href={"/login"}
-                  className="font-bold text-base-content"
-                  data-testid="login-link"
-                >
-                  {t("login")}
-                </Link>
-              </div>
               {process.env.NEXT_PUBLIC_STRIPE && (
                 <div className="text-neutral text-center flex items-baseline gap-1 justify-center">
                   <p>{t("need_help")}</p>
