@@ -1,0 +1,83 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"testbot-dupe\"}",
+    "ResponseBody": "{\"response\":{\"id\":521903,\"name\":\"testbot-dupe\",\"token\":\"a41c8e77b2d95036fe1a4c8b70d23e95cc6142f8093baed7512ef0a6d34b9c18\",\"expires\":\"2027-09-12T20:31:42.516Z\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/users/me/tokens",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:38:50.051Z",
+    "Scheme": "http",
+    "scenarioName": "pat-duplicate-name-rejected"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"testbot-dupe\"}",
+    "ResponseBody": "{\"response\":\"Token with that name already exists.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/users/me/tokens",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:38:51.051Z",
+    "Scheme": "http",
+    "scenarioName": "pat-duplicate-name-rejected"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/users/me/tokens/521903",
+    "QueryParams": {},
+    "StatusCode": 204,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:38:52.051Z",
+    "Scheme": "http",
+    "scenarioName": "pat-duplicate-name-rejected"
+  }
+]
