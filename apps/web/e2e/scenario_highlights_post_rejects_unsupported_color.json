@@ -1,0 +1,191 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Highlights Post Colours\"}",
+    "ResponseBody": "{\"response\":{\"id\":711,\"name\":\"Highlights Post Colours\",\"ownerId\":1}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:59:56.939Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_post_rejects_unsupported_color"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"type\":\"url\",\"url\":\"https://example.com/hl-post\",\"name\":\"Highlights Post Source\",\"collection\":{\"id\":711},\"tags\":[]}",
+    "ResponseBody": "{\"response\":{\"id\":722,\"name\":\"Highlights Post Source\",\"url\":\"https://example.com/hl-post\",\"collectionId\":711}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:59:57.939Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_post_rejects_unsupported_color"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkId\":722,\"color\":\"blue\",\"text\":\"Supported colour passage\",\"startOffset\":0,\"endOffset\":24,\"comment\":\"supported\"}",
+    "ResponseBody": "{\"response\":{\"id\":733,\"color\":\"blue\",\"comment\":\"supported\",\"linkId\":722,\"text\":\"Supported colour passage\",\"startOffset\":0,\"endOffset\":24}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:59:58.939Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_post_rejects_unsupported_color"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkId\":722,\"color\":\"purple\",\"text\":\"Unsupported colour passage\",\"startOffset\":30,\"endOffset\":56,\"comment\":\"unsupported\"}",
+    "ResponseBody": "{\"response\":\"Error: Invalid option: expected one of \\\"yellow\\\"|\\\"green\\\"|\\\"blue\\\"|\\\"red\\\" [color]\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T20:59:59.939Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_post_rejects_unsupported_color"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkId\":722,\"color\":\"\",\"text\":\"Empty colour passage\",\"startOffset\":60,\"endOffset\":80,\"comment\":\"empty\"}",
+    "ResponseBody": "{\"response\":\"Error: Invalid option: expected one of \\\"yellow\\\"|\\\"green\\\"|\\\"blue\\\"|\\\"red\\\" [color]\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T21:00:00.939Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_post_rejects_unsupported_color"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":722}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/links/722",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T21:00:01.939Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_post_rejects_unsupported_color"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":711}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/711",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-12T21:00:02.939Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_post_rejects_unsupported_color"
+  }
+]
