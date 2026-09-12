@@ -3,6 +3,7 @@ import deleteLinkById from "@/lib/api/controllers/links/linkId/deleteLinkById";
 import updateLinkById from "@/lib/api/controllers/links/linkId/updateLinkById";
 import getLinkById from "@/lib/api/controllers/links/linkId/getLinkById";
 import verifyUser from "@/lib/api/verifyUser";
+import { getArchiveStatus } from "@/lib/api/getArchiveStatus";
 
 export default async function links(req: NextApiRequest, res: NextApiResponse) {
   const user = await verifyUser({ req, res });
@@ -10,8 +11,13 @@ export default async function links(req: NextApiRequest, res: NextApiResponse) {
 
   if (req.method === "GET") {
     const updated = await getLinkById(user.id, Number(req.query.id));
+    // Attach archiveStatus derived from archive job columns
+    const responseWithStatus =
+      updated.response && typeof updated.response === "object" && !Array.isArray(updated.response)
+        ? { ...updated.response, archiveStatus: getArchiveStatus(updated.response as any) }
+        : updated.response;
     return res.status(updated.status).json({
-      response: updated.response,
+      response: responseWithStatus,
     });
   } else if (req.method === "PUT") {
     if (process.env.NEXT_PUBLIC_DEMO === "true")
