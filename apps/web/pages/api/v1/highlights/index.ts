@@ -2,6 +2,10 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import verifyUser from "@/lib/api/verifyUser";
 import { PostHighlightSchema } from "@linkwarden/lib/schemaValidation";
 import postOrUpdateHighlight from "@/lib/api/controllers/highlights/postOrUpdateHighlight";
+import getHighlights from "@/lib/api/controllers/highlights/getHighlights";
+
+const firstQueryValue = (value: string | string[] | undefined) =>
+  Array.isArray(value) ? value[0] : value;
 
 export default async function highlights(
   req: NextApiRequest,
@@ -9,6 +13,18 @@ export default async function highlights(
 ) {
   const user = await verifyUser({ req, res });
   if (!user) return;
+
+  if (req.method === "GET") {
+    const highlights = await getHighlights({
+      userId: user.id,
+      color: firstQueryValue(req.query.color),
+      q: firstQueryValue(req.query.q),
+      take: firstQueryValue(req.query.take),
+      cursor: firstQueryValue(req.query.cursor),
+    });
+
+    return res.status(highlights.status).json({ response: highlights.response });
+  }
 
   if (req.method === "POST") {
     if (process.env.NEXT_PUBLIC_DEMO === "true")
@@ -35,4 +51,6 @@ export default async function highlights(
       .status(highlights.status)
       .json({ response: highlights.response });
   }
+
+  return res.status(405).json({ response: "Method not allowed." });
 }
