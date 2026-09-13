@@ -1,0 +1,380 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\": \"Skyramp Search Collection\", \"description\": \"\", \"color\": \"#0ea5e9\", \"isPublic\": false}",
+    "ResponseBody": "{\"response\": {\"id\": 90001, \"name\": \"Skyramp Search Collection\", \"description\": \"\", \"color\": \"#0ea5e9\", \"isPublic\": false, \"ownerId\": 1, \"parentId\": null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:08:24.283Z",
+    "Scheme": "http",
+    "scenarioName": "links_search_q_tag_and_semantics"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\": \"Skyramp Search Alpha Doc\", \"url\": \"https://example.com/urlmarkeralpha\", \"description\": \"descmarkeralpha notes\", \"type\": \"url\", \"collection\": {\"id\": 90001}, \"tags\": [{\"name\": \"skyramp-search-tag-a\"}]}",
+    "ResponseBody": "{\"response\": {\"id\": 90002, \"name\": \"Skyramp Search Alpha Doc\", \"url\": \"https://example.com/urlmarkeralpha\", \"description\": \"descmarkeralpha notes\", \"type\": \"url\", \"collectionId\": 90001, \"tags\": [{\"id\": 5001, \"name\": \"skyramp-search-tag-a\"}]}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:08:25.283Z",
+    "Scheme": "http",
+    "scenarioName": "links_search_q_tag_and_semantics"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\": \"Skyramp Search Beta Doc\", \"url\": \"https://example.com/urlmarkerbeta\", \"description\": \"descmarkerbeta notes\", \"type\": \"url\", \"collection\": {\"id\": 90001}, \"tags\": [{\"name\": \"skyramp-search-tag-b\"}]}",
+    "ResponseBody": "{\"response\": {\"id\": 90003, \"name\": \"Skyramp Search Beta Doc\", \"url\": \"https://example.com/urlmarkerbeta\", \"description\": \"descmarkerbeta notes\", \"type\": \"url\", \"collectionId\": 90001, \"tags\": [{\"id\": 5002, \"name\": \"skyramp-search-tag-b\"}]}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:08:26.283Z",
+    "Scheme": "http",
+    "scenarioName": "links_search_q_tag_and_semantics"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\": [{\"id\": 90003, \"name\": \"Skyramp Search Beta Doc\"}, {\"id\": 90002, \"name\": \"Skyramp Search Alpha Doc\"}]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/links/search",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:08:27.283Z",
+    "Scheme": "http",
+    "scenarioName": "links_search_q_tag_and_semantics"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\": [{\"id\": 90003, \"name\": \"Skyramp Search Beta Doc\"}, {\"id\": 90002, \"name\": \"Skyramp Search Alpha Doc\"}]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/links/search",
+    "QueryParams": {
+      "q": [
+        "Skyramp Search"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:08:28.283Z",
+    "Scheme": "http",
+    "scenarioName": "links_search_q_tag_and_semantics"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\": [{\"id\": 90002, \"name\": \"Skyramp Search Alpha Doc\", \"url\": \"https://example.com/urlmarkeralpha\"}]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/links/search",
+    "QueryParams": {
+      "q": [
+        "urlmarkeralpha"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:08:29.283Z",
+    "Scheme": "http",
+    "scenarioName": "links_search_q_tag_and_semantics"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\": [{\"id\": 90003, \"name\": \"Skyramp Search Beta Doc\", \"description\": \"descmarkerbeta notes\"}]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/links/search",
+    "QueryParams": {
+      "q": [
+        "descmarkerbeta"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:08:30.283Z",
+    "Scheme": "http",
+    "scenarioName": "links_search_q_tag_and_semantics"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\": [{\"id\": 90002, \"name\": \"Skyramp Search Alpha Doc\", \"tags\": [{\"id\": 5001, \"name\": \"skyramp-search-tag-a\"}]}]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/links/search",
+    "QueryParams": {
+      "tag": [
+        "skyramp-search-tag-a"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:08:31.283Z",
+    "Scheme": "http",
+    "scenarioName": "links_search_q_tag_and_semantics"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\": []}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/links/search",
+    "QueryParams": {
+      "q": [
+        "Beta"
+      ],
+      "tag": [
+        "skyramp-search-tag-a"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:08:32.283Z",
+    "Scheme": "http",
+    "scenarioName": "links_search_q_tag_and_semantics"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\": []}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/links/search",
+    "QueryParams": {
+      "q": [
+        "zzznosuchtokenzzz"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:08:33.283Z",
+    "Scheme": "http",
+    "scenarioName": "links_search_q_tag_and_semantics"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\": {\"id\": 90002}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/links/90002",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:08:34.283Z",
+    "Scheme": "http",
+    "scenarioName": "links_search_q_tag_and_semantics"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\": {\"id\": 90003}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/links/90003",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:08:35.283Z",
+    "Scheme": "http",
+    "scenarioName": "links_search_q_tag_and_semantics"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\": {\"id\": 90001}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/90001",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:08:36.283Z",
+    "Scheme": "http",
+    "scenarioName": "links_search_q_tag_and_semantics"
+  }
+]
