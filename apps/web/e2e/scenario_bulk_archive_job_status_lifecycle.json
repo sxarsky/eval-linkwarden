@@ -1,0 +1,164 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"testbot-bulk-archive-col\"}",
+    "ResponseBody": "{\"response\":{\"id\":501,\"name\":\"testbot-bulk-archive-col\",\"ownerId\":1,\"isPublic\":false}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:09:52.184Z",
+    "Scheme": "http",
+    "scenarioName": "bulk_archive_job_status_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"url\":\"https://example.com/testbot-bulk-archive\",\"name\":\"testbot-bulk-archive-link\",\"type\":\"url\",\"tags\":[],\"collection\":{\"id\":501}}",
+    "ResponseBody": "{\"response\":{\"id\":701,\"name\":\"testbot-bulk-archive-link\",\"url\":\"https://example.com/testbot-bulk-archive\",\"type\":\"url\",\"collectionId\":501}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:09:53.184Z",
+    "Scheme": "http",
+    "scenarioName": "bulk_archive_job_status_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkIds\":[701]}",
+    "ResponseBody": "{\"response\":{\"jobId\":\"a4d17e62-3f58-4c09-9b21-6e8f0d5a7c43\",\"status\":\"queued\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links/bulk-archive",
+    "QueryParams": {},
+    "StatusCode": 202,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:09:54.184Z",
+    "Scheme": "http",
+    "scenarioName": "bulk_archive_job_status_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":\"a4d17e62-3f58-4c09-9b21-6e8f0d5a7c43\",\"status\":\"queued\",\"totalLinks\":1,\"archivedCount\":0,\"failedCount\":0,\"createdAt\":\"2026-09-13T20:00:00.000Z\",\"completedAt\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/links/bulk-archive/a4d17e62-3f58-4c09-9b21-6e8f0d5a7c43",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:09:55.184Z",
+    "Scheme": "http",
+    "scenarioName": "bulk_archive_job_status_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":701}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/links/701",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:09:56.184Z",
+    "Scheme": "http",
+    "scenarioName": "bulk_archive_job_status_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":501}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/501",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:09:57.184Z",
+    "Scheme": "http",
+    "scenarioName": "bulk_archive_job_status_lifecycle"
+  }
+]
