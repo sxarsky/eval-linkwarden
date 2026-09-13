@@ -1,0 +1,393 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Testbot Highlights Library\",\"description\":\"\",\"color\":\"#0ea5e9\"}",
+    "ResponseBody": "{\"response\":{\"id\":901,\"name\":\"Testbot Highlights Library\",\"description\":\"\",\"color\":\"#0ea5e9\",\"ownerId\":1}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:19:54.708Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_search_filter_and_note_edit"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Testbot Highlights Source\",\"url\":\"https://example.com/testbot-highlights\",\"description\":\"\",\"type\":\"url\",\"tags\":[],\"collection\":{\"id\":901}}",
+    "ResponseBody": "{\"response\":{\"id\":801,\"name\":\"Testbot Highlights Source\",\"url\":\"https://example.com/testbot-highlights\",\"collectionId\":901}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:19:55.708Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_search_filter_and_note_edit"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkId\":801,\"color\":\"yellow\",\"text\":\"Testbot alpha passage about migration\",\"comment\":\"remember this quotation\",\"startOffset\":0,\"endOffset\":37}",
+    "ResponseBody": "{\"response\":{\"id\":701,\"color\":\"yellow\",\"comment\":\"remember this quotation\",\"linkId\":801,\"userId\":1,\"startOffset\":0,\"endOffset\":37,\"text\":\"Testbot alpha passage about migration\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:19:56.708Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_search_filter_and_note_edit"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkId\":801,\"color\":\"green\",\"text\":\"Testbot beta passage about indexing\",\"comment\":\"second note\",\"startOffset\":40,\"endOffset\":75}",
+    "ResponseBody": "{\"response\":{\"id\":702,\"color\":\"green\",\"comment\":\"second note\",\"linkId\":801,\"userId\":1,\"startOffset\":40,\"endOffset\":75,\"text\":\"Testbot beta passage about indexing\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:19:57.708Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_search_filter_and_note_edit"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"highlights\":[{\"id\":702,\"color\":\"green\",\"comment\":\"second note\",\"linkId\":801,\"text\":\"Testbot beta passage about indexing\",\"link\":{\"id\":801,\"name\":\"Testbot Highlights Source\",\"url\":\"https://example.com/testbot-highlights\"}},{\"id\":701,\"color\":\"yellow\",\"comment\":\"remember this quotation\",\"linkId\":801,\"text\":\"Testbot alpha passage about migration\",\"link\":{\"id\":801,\"name\":\"Testbot Highlights Source\",\"url\":\"https://example.com/testbot-highlights\"}}],\"nextCursor\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:19:58.708Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_search_filter_and_note_edit"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"highlights\":[{\"id\":702,\"color\":\"green\",\"comment\":\"second note\",\"text\":\"Testbot beta passage about indexing\"}],\"nextCursor\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {
+      "q": [
+        "beta"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:19:59.708Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_search_filter_and_note_edit"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"highlights\":[{\"id\":701,\"color\":\"yellow\",\"comment\":\"remember this quotation\",\"text\":\"Testbot alpha passage about migration\"}],\"nextCursor\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {
+      "q": [
+        "quotation"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:20:00.708Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_search_filter_and_note_edit"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"highlights\":[],\"nextCursor\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {
+      "q": [
+        "zzzznomatchzzzz"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:20:01.708Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_search_filter_and_note_edit"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"highlights\":[{\"id\":702,\"color\":\"green\",\"comment\":\"second note\"}],\"nextCursor\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {
+      "color": [
+        "green"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:20:02.708Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_search_filter_and_note_edit"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"highlights\":[{\"id\":702,\"color\":\"green\"}],\"nextCursor\":702}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {
+      "take": [
+        "1"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:20:03.708Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_search_filter_and_note_edit"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"highlights\":[{\"id\":701,\"color\":\"yellow\"}],\"nextCursor\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {
+      "take": [
+        "1"
+      ],
+      "cursor": [
+        "702"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:20:04.708Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_search_filter_and_note_edit"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"comment\":\"Testbot edited note\",\"color\":\"blue\"}",
+    "ResponseBody": "{\"response\":{\"id\":701,\"color\":\"blue\",\"comment\":\"Testbot edited note\",\"linkId\":801,\"text\":\"Testbot alpha passage about migration\",\"link\":{\"id\":801,\"name\":\"Testbot Highlights Source\",\"url\":\"https://example.com/testbot-highlights\"}}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PATCH",
+    "Path": "/api/v1/highlights/701",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:20:05.708Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_search_filter_and_note_edit"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"highlights\":[{\"id\":701,\"color\":\"blue\",\"comment\":\"Testbot edited note\"}],\"nextCursor\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {
+      "color": [
+        "blue"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:20:06.708Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_search_filter_and_note_edit"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":801}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/links/801",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:20:07.708Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_search_filter_and_note_edit"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":901}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/901",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:20:08.708Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_search_filter_and_note_edit"
+  }
+]
