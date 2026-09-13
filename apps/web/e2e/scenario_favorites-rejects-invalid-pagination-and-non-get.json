@@ -1,0 +1,153 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"links\":[],\"cursor\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/links/favorites",
+    "QueryParams": {
+      "take": [
+        "2"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:14:13.677Z",
+    "Scheme": "http",
+    "scenarioName": "favorites-rejects-invalid-pagination-and-non-get"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{}",
+    "ResponseBody": "{\"response\":\"Method not allowed.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links/favorites",
+    "QueryParams": {},
+    "StatusCode": 405,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:14:14.677Z",
+    "Scheme": "http",
+    "scenarioName": "favorites-rejects-invalid-pagination-and-non-get"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/links/favorites",
+    "QueryParams": {
+      "take": [
+        "-1"
+      ]
+    },
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:14:15.677Z",
+    "Scheme": "http",
+    "scenarioName": "favorites-rejects-invalid-pagination-and-non-get"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/links/favorites",
+    "QueryParams": {
+      "cursor": [
+        "abc"
+      ]
+    },
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:14:16.677Z",
+    "Scheme": "http",
+    "scenarioName": "favorites-rejects-invalid-pagination-and-non-get"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/links/favorites",
+    "QueryParams": {
+      "cursor": [
+        "999999999"
+      ]
+    },
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:14:17.677Z",
+    "Scheme": "http",
+    "scenarioName": "favorites-rejects-invalid-pagination-and-non-get"
+  }
+]
