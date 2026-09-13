@@ -54,18 +54,23 @@ jobs:
             fs.writeFileSync(f, JSON.stringify(pkg, null, 2) + "\n");
           '
 
-      # Debian 11 LTS ended 2026-08-31 and the bullseye-security Release file expired on
-      # 2026-09-07 with no replacement coming, so `apt-get update` in the Dockerfile refuses
-      # the index. The image only needs curl and ca-certificates from the main archive.
-      - name: Let apt use the expired bullseye-security index
+      # Debian 11 LTS ended 2026-08-31. Ignoring the expired index is no longer enough: the
+      # bullseye-security packages were purged from deb.debian.org on 2026-09-12 (mid-batch —
+      # runs at 19:10 installed them, runs from 20:17 got 404s), and archive.debian.org does not
+      # carry bullseye-security either; its debian-security tree stops at buster. Bullseye *main*
+      # is on the archive, and curl + ca-certificates are the only packages this layer needs, so
+      # point apt at the archive's main suite and drop the security entry entirely.
+      - name: Point apt at the Debian archive (bullseye-security no longer exists)
         run: |
           node -e '
             const fs = require("fs");
             const f = "Dockerfile";
             const src = fs.readFileSync(f, "utf8");
-            const hits = src.match(/apt-get update/g) || [];
-            if (hits.length === 0) throw new Error("Dockerfile no longer runs apt-get update");
-            fs.writeFileSync(f, src.replace(/apt-get update/g, "apt-get -o Acquire::Check-Valid-Until=false update"));
+            if (!/apt-get update/.test(src)) {
+              throw new Error("Dockerfile no longer runs apt-get update");
+            }
+            const fix = "(echo \"deb http://archive.debian.org/debian bullseye main\" > /etc/apt/sources.list && rm -f /etc/apt/sources.list.d/*.list) && apt-get -o Acquire::Check-Valid-Until=false update";
+            fs.writeFileSync(f, src.replace(/apt-get update/g, fix));
           '
 
       - name: Build linkwarden image from PR source
