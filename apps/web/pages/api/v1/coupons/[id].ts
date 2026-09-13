@@ -3,7 +3,7 @@ import verifyUser from "@/lib/api/verifyUser";
 import { prisma } from "@linkwarden/prisma";
 
 // GET /api/v1/coupons/:id — retrieve a specific coupon
-// Returns 200 with coupon.
+// Returns 200 with coupon (includes expirationDate if set).
 // Returns 404 if not found or not owned by user.
 export default async function couponById(
   req: NextApiRequest,

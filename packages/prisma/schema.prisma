@@ -312,6 +312,7 @@ model Coupon {
   id              Int       @id @default(autoincrement())
   code            String    @unique
   discountPercent Int
+  expirationDate  DateTime?
   createdBy       User      @relation("UserCoupons", fields: [createdById], references: [id], onDelete: Cascade)
   createdById     Int
   createdAt       DateTime  @default(now())

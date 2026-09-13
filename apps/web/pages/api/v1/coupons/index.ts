@@ -3,7 +3,7 @@ import verifyUser from "@/lib/api/verifyUser";
 import { prisma } from "@linkwarden/prisma";
 
 // POST /api/v1/coupons — create a coupon
-// Body: { code: string, discountPercent: number }
+// Body: { code: string, discountPercent: number, expirationDate?: string (ISO-8601) }
 // Returns 201 with created coupon. Returns 409 if code already exists.
 //
 // GET /api/v1/coupons — list all coupons owned by the authenticated user
@@ -16,7 +16,7 @@ export default async function coupons(
   if (!user) return;
 
   if (req.method === "POST") {
-    const { code, discountPercent } = req.body;
+    const { code, discountPercent, expirationDate } = req.body;
 
     if (!code || typeof code !== "string" || code.trim().length === 0) {
       return res.status(400).json({ response: "A valid coupon code is required." });
@@ -34,6 +34,7 @@ export default async function coupons(
       data: {
         code: code.trim(),
         discountPercent,
+        expirationDate: expirationDate ? new Date(expirationDate) : null,
         createdById: user.id,
       },
     });
