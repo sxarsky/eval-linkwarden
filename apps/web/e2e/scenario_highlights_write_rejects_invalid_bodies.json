@@ -1,0 +1,246 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Testbot Highlights Validation\",\"description\":\"\",\"color\":\"#0ea5e9\"}",
+    "ResponseBody": "{\"response\":{\"id\":9021,\"name\":\"Testbot Highlights Validation\",\"description\":\"\",\"color\":\"#0ea5e9\",\"ownerId\":1}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:21:07.571Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_write_rejects_invalid_bodies"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Testbot Validation Source\",\"url\":\"https://example.com/testbot-validation\",\"description\":\"\",\"type\":\"url\",\"tags\":[],\"collection\":{\"id\":9021}}",
+    "ResponseBody": "{\"response\":{\"id\":8031,\"name\":\"Testbot Validation Source\",\"url\":\"https://example.com/testbot-validation\",\"collectionId\":9021}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:21:08.571Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_write_rejects_invalid_bodies"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkId\":8031,\"color\":\"yellow\",\"text\":\"Testbot validation passage\",\"comment\":\"validation note\",\"startOffset\":0,\"endOffset\":26}",
+    "ResponseBody": "{\"response\":{\"id\":7041,\"color\":\"yellow\",\"comment\":\"validation note\",\"linkId\":8031,\"userId\":1,\"startOffset\":0,\"endOffset\":26,\"text\":\"Testbot validation passage\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:21:09.571Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_write_rejects_invalid_bodies"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkId\":8031,\"color\":\"purple\",\"text\":\"Testbot rejected passage\",\"startOffset\":30,\"endOffset\":54}",
+    "ResponseBody": "{\"response\":\"Error: Invalid option: expected one of \\\"yellow\\\"|\\\"green\\\"|\\\"blue\\\"|\\\"red\\\" [color]\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:21:10.571Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_write_rejects_invalid_bodies"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"color\":\"purple\"}",
+    "ResponseBody": "{\"response\":\"Error: Invalid option: expected one of \\\"yellow\\\"|\\\"green\\\"|\\\"blue\\\"|\\\"red\\\" [color]\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PATCH",
+    "Path": "/api/v1/highlights/7041",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:21:11.571Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_write_rejects_invalid_bodies"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"startOffset\":5}",
+    "ResponseBody": "{\"response\":\"Error: Provide a color or a comment to update []\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PATCH",
+    "Path": "/api/v1/highlights/7041",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:21:12.571Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_write_rejects_invalid_bodies"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"comment\":\"Testbot edited note\"}",
+    "ResponseBody": "{\"response\":\"Highlight not found.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PATCH",
+    "Path": "/api/v1/highlights/999999999",
+    "QueryParams": {},
+    "StatusCode": 404,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:21:13.571Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_write_rejects_invalid_bodies"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"highlights\":[{\"id\":7041,\"color\":\"yellow\",\"comment\":\"validation note\",\"text\":\"Testbot validation passage\",\"link\":{\"id\":8031,\"name\":\"Testbot Validation Source\",\"url\":\"https://example.com/testbot-validation\"}}],\"nextCursor\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {
+      "q": [
+        "validation"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:21:14.571Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_write_rejects_invalid_bodies"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":8031}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/links/8031",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:21:15.571Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_write_rejects_invalid_bodies"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":9021}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/9021",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:21:16.571Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_write_rejects_invalid_bodies"
+  }
+]

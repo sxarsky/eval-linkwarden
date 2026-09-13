@@ -1,0 +1,341 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"username\":\"tb-hl-owner\",\"password\":\"testbotpassword123\",\"name\":\"Testbot Highlight Owner\"}",
+    "ResponseBody": "{\"response\":{\"id\":6011,\"username\":\"tb-hl-owner\",\"name\":\"Testbot Highlight Owner\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/users",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:21:37.588Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_foreign_highlight_is_refused",
+    "UniqueFields": [
+      "username"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"csrfToken\":\"aa11bb22cc33dd44ee55ff66aa77bb88cc99dd00ee11ff22aa33bb44cc55dd66\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/auth/csrf",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:21:38.588Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_foreign_highlight_is_refused"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"username\":\"tb-hl-owner\",\"password\":\"testbotpassword123\",\"csrfToken\":\"aa11bb22cc33dd44ee55ff66aa77bb88cc99dd00ee11ff22aa33bb44cc55dd66\"}",
+    "ResponseBody": "{}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/auth/callback/credentials",
+    "QueryParams": {},
+    "StatusCode": 302,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:21:39.588Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_foreign_highlight_is_refused"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Testbot Owner Collection\",\"description\":\"\",\"color\":\"#ef4444\"}",
+    "ResponseBody": "{\"response\":{\"id\":9088,\"name\":\"Testbot Owner Collection\",\"description\":\"\",\"color\":\"#ef4444\",\"ownerId\":6011}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:21:40.588Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_foreign_highlight_is_refused"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Testbot Owner Source\",\"url\":\"https://example.com/testbot-owner\",\"description\":\"\",\"type\":\"url\",\"tags\":[],\"collection\":{\"id\":9088}}",
+    "ResponseBody": "{\"response\":{\"id\":8099,\"name\":\"Testbot Owner Source\",\"url\":\"https://example.com/testbot-owner\",\"collectionId\":9088}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:21:41.588Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_foreign_highlight_is_refused"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkId\":8099,\"color\":\"red\",\"text\":\"Owner private passage\",\"comment\":\"owner note\",\"startOffset\":0,\"endOffset\":21}",
+    "ResponseBody": "{\"response\":{\"id\":7100,\"color\":\"red\",\"comment\":\"owner note\",\"linkId\":8099,\"userId\":6011,\"startOffset\":0,\"endOffset\":21,\"text\":\"Owner private passage\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:21:42.588Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_foreign_highlight_is_refused"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"csrfToken\":\"aa11bb22cc33dd44ee55ff66aa77bb88cc99dd00ee11ff22aa33bb44cc55dd66\"}",
+    "ResponseBody": "{}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/auth/signout",
+    "QueryParams": {},
+    "StatusCode": 302,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:21:43.588Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_foreign_highlight_is_refused"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"comment\":\"tampered by another user\",\"color\":\"blue\"}",
+    "ResponseBody": "{\"response\":\"Highlight not found.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PATCH",
+    "Path": "/api/v1/highlights/7100",
+    "QueryParams": {},
+    "StatusCode": 404,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:21:44.588Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_foreign_highlight_is_refused"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"Highlight not found.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/highlights/7100",
+    "QueryParams": {},
+    "StatusCode": 404,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:21:45.588Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_foreign_highlight_is_refused"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"csrfToken\":\"bb22cc33dd44ee55ff66aa77bb88cc99dd00ee11ff22aa33bb44cc55dd66ee77\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/auth/csrf",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:21:46.588Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_foreign_highlight_is_refused"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"username\":\"tb-hl-owner\",\"password\":\"testbotpassword123\",\"csrfToken\":\"bb22cc33dd44ee55ff66aa77bb88cc99dd00ee11ff22aa33bb44cc55dd66ee77\"}",
+    "ResponseBody": "{}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/auth/callback/credentials",
+    "QueryParams": {},
+    "StatusCode": 302,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:21:47.588Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_foreign_highlight_is_refused"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"highlights\":[{\"id\":7100,\"color\":\"red\",\"comment\":\"owner note\",\"linkId\":8099,\"text\":\"Owner private passage\",\"link\":{\"id\":8099,\"name\":\"Testbot Owner Source\",\"url\":\"https://example.com/testbot-owner\"}}],\"nextCursor\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:21:48.588Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_foreign_highlight_is_refused"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":8099}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/links/8099",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:21:49.588Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_foreign_highlight_is_refused"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":9088}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/9088",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:21:50.588Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_patch_foreign_highlight_is_refused"
+  }
+]
