@@ -1,4 +1,5 @@
 import {
+  useInfiniteQuery,
   useQuery,
   useMutation,
   useQueryClient,
@@ -6,7 +7,26 @@ import {
 } from "@tanstack/react-query";
 import { useSession } from "next-auth/react";
 import { Highlight } from "@linkwarden/prisma/client";
-import { PostHighlightSchemaType } from "@linkwarden/lib/schemaValidation";
+import {
+  PostHighlightSchemaType,
+  UpdateHighlightSchemaType,
+} from "@linkwarden/lib/schemaValidation";
+
+export type HighlightWithLink = Highlight & {
+  link: { id: number; name: string; url: string | null };
+};
+
+type HighlightsPage = {
+  highlights: HighlightWithLink[];
+  nextCursor: number | null;
+};
+
+type UseHighlightsOptions = {
+  q?: string;
+  color?: string;
+};
+
+const LIBRARY_KEY = "highlight-library";
 
 const useGetLinkHighlights = (
   linkId: number
@@ -84,4 +104,95 @@ const useRemoveHighlight = (linkId: number) => {
   });
 };
 
-export { useGetLinkHighlights, usePostHighlight, useRemoveHighlight };
+const useHighlights = ({ q, color }: UseHighlightsOptions = {}) => {
+  const { status } = useSession();
+
+  return useInfiniteQuery<HighlightsPage>({
+    queryKey: [LIBRARY_KEY, { q: q ?? "", color: color ?? "" }],
+    initialPageParam: undefined as number | undefined,
+    queryFn: async ({ pageParam }) => {
+      const params = new URLSearchParams();
+      if (q) params.set("q", q);
+      if (color) params.set("color", color);
+      if (pageParam) params.set("cursor", String(pageParam));
+
+      const queryString = params.toString();
+
+      const response = await fetch(
+        `/api/v1/highlights${queryString ? `?${queryString}` : ""}`
+      );
+
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.response);
+
+      return data.response as HighlightsPage;
+    },
+    getNextPageParam: (lastPage) => lastPage.nextCursor ?? undefined,
+    enabled: status === "authenticated",
+  });
+};
+
+const useUpdateHighlight = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async ({
+      id,
+      ...body
+    }: { id: number } & UpdateHighlightSchemaType) => {
+      const response = await fetch(`/api/v1/highlights/${id}`, {
+        body: JSON.stringify(body),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "PATCH",
+      });
+
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.response);
+
+      return data.response as HighlightWithLink;
+    },
+    onSuccess: (data) => {
+      queryClient.invalidateQueries({ queryKey: [LIBRARY_KEY] });
+      queryClient.invalidateQueries({ queryKey: ["highlights", data.linkId] });
+    },
+  });
+};
+
+const useDeleteHighlight = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async ({
+      id,
+    }: {
+      id: number;
+      linkId: number;
+    }): Promise<number> => {
+      const response = await fetch(`/api/v1/highlights/${id}`, {
+        method: "DELETE",
+      });
+
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.response);
+
+      return data.response as number;
+    },
+    onSuccess: (_data, variables) => {
+      queryClient.invalidateQueries({ queryKey: [LIBRARY_KEY] });
+      queryClient.invalidateQueries({
+        queryKey: ["highlights", variables.linkId],
+      });
+    },
+  });
+};
+
+export {
+  useGetLinkHighlights,
+  usePostHighlight,
+  useRemoveHighlight,
+  useHighlights,
+  useUpdateHighlight,
+  useDeleteHighlight,
+};

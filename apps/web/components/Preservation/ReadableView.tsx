@@ -19,6 +19,7 @@ import {
   useRemoveHighlight,
 } from "@linkwarden/router/highlights";
 import { Highlight } from "@linkwarden/prisma/client";
+import { PostHighlightSchemaType } from "@linkwarden/lib/schemaValidation";
 import { useUser } from "@linkwarden/router/user";
 import { Caveat } from "next/font/google";
 import { Bentham } from "next/font/google";
@@ -377,7 +378,7 @@ export default function ReadableView({ link }: Props) {
         ...selection,
         color: color || selectionInfo?.color || "yellow",
         comment: selectionInfo?.comment,
-      } as Highlight,
+      } as unknown as PostHighlightSchemaType,
       {
         onSuccess: (data) => {
           if (data) {

@@ -282,8 +282,14 @@ export const MergeTagsSchema = z.object({
 
 export type MergeTagsSchemaType = z.infer<typeof MergeTagsSchema>;
 
+// The reader only ever draws these four colours (see ReadableView.tsx), so the API
+// accepts these four and nothing else.
+export const HIGHLIGHT_COLORS = ["yellow", "green", "blue", "red"] as const;
+
+export type HighlightColor = (typeof HIGHLIGHT_COLORS)[number];
+
 export const PostHighlightSchema = z.object({
-  color: z.string().trim().max(50),
+  color: z.enum(HIGHLIGHT_COLORS),
   comment: z.string().trim().max(2048).nullish(),
   startOffset: z.number(),
   endOffset: z.number(),
@@ -292,6 +298,17 @@ export const PostHighlightSchema = z.object({
 });
 
 export type PostHighlightSchemaType = z.infer<typeof PostHighlightSchema>;
+
+export const UpdateHighlightSchema = z
+  .object({
+    color: z.enum(HIGHLIGHT_COLORS).optional(),
+    comment: z.string().trim().max(2048).nullish(),
+  })
+  .refine((body) => body.color !== undefined || body.comment !== undefined, {
+    message: "Provide a color or a comment to update",
+  });
+
+export type UpdateHighlightSchemaType = z.infer<typeof UpdateHighlightSchema>;
 
 export const LinkArchiveActionSchema = z.object({
   linkIds: z.array(z.number()).optional(),
