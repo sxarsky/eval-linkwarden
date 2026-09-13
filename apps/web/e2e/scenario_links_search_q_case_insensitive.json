@@ -1,0 +1,141 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\": \"Skyramp CaseProbe Collection\", \"description\": \"\", \"color\": \"#0ea5e9\", \"isPublic\": false}",
+    "ResponseBody": "{\"response\": {\"id\": 91001, \"name\": \"Skyramp CaseProbe Collection\", \"description\": \"\", \"color\": \"#0ea5e9\", \"isPublic\": false, \"ownerId\": 1, \"parentId\": null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:08:32.686Z",
+    "Scheme": "http",
+    "scenarioName": "links_search_q_case_insensitive"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\": \"Skyramp CaseProbe GitHub Doc\", \"url\": \"https://example.com/skyramp-caseprobe\", \"description\": \"caseprobe description\", \"type\": \"url\", \"collection\": {\"id\": 91001}, \"tags\": []}",
+    "ResponseBody": "{\"response\": {\"id\": 91002, \"name\": \"Skyramp CaseProbe GitHub Doc\", \"url\": \"https://example.com/skyramp-caseprobe\", \"description\": \"caseprobe description\", \"type\": \"url\", \"collectionId\": 91001, \"tags\": []}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:08:33.686Z",
+    "Scheme": "http",
+    "scenarioName": "links_search_q_case_insensitive"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\": [{\"id\": 91002, \"name\": \"Skyramp CaseProbe GitHub Doc\"}]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/links/search",
+    "QueryParams": {
+      "q": [
+        "caseprobe github"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:08:34.686Z",
+    "Scheme": "http",
+    "scenarioName": "links_search_q_case_insensitive"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\": {\"id\": 91002}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/links/91002",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:08:35.686Z",
+    "Scheme": "http",
+    "scenarioName": "links_search_q_case_insensitive"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\": {\"id\": 91001}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/91001",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:08:36.686Z",
+    "Scheme": "http",
+    "scenarioName": "links_search_q_case_insensitive"
+  }
+]
