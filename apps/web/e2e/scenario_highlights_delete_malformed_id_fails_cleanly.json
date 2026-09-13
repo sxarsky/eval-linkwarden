@@ -1,0 +1,218 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Highlights malformed-id collection\",\"description\":\"\",\"color\":\"#0ea5e9\",\"isPublic\":false}",
+    "ResponseBody": "{\"response\":{\"id\":931001,\"name\":\"Highlights malformed-id collection\",\"ownerId\":1}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:20:03.701Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_delete_malformed_id_fails_cleanly"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Highlights malformed-id article\",\"url\":\"https://example.com/highlights-malformed-id-article\",\"description\":\"\",\"type\":\"url\",\"tags\":[],\"collection\":{\"id\":931001,\"name\":\"Highlights malformed-id collection\",\"ownerId\":1}}",
+    "ResponseBody": "{\"response\":{\"id\":931002,\"name\":\"Highlights malformed-id article\",\"collectionId\":931001}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:20:04.701Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_delete_malformed_id_fails_cleanly"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkId\":931002,\"color\":\"yellow\",\"text\":\"A passage that will be deleted cleanly\",\"comment\":\"a plain note\",\"startOffset\":0,\"endOffset\":20}",
+    "ResponseBody": "{\"response\":{\"id\":931003,\"color\":\"yellow\",\"comment\":\"a plain note\",\"linkId\":931002}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:20:05.701Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_delete_malformed_id_fails_cleanly"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":931003}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/highlights/931003",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:20:06.701Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_delete_malformed_id_fails_cleanly"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"Highlight not found.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/highlights/2147483600",
+    "QueryParams": {},
+    "StatusCode": 404,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:20:07.701Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_delete_malformed_id_fails_cleanly"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"Highlight not found.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/highlights/not-a-number",
+    "QueryParams": {},
+    "StatusCode": 404,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:20:08.701Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_delete_malformed_id_fails_cleanly"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":931002}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/links/931002",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:20:09.701Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_delete_malformed_id_fails_cleanly"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":931001}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/931001",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:20:10.701Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_delete_malformed_id_fails_cleanly"
+  }
+]

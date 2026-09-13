@@ -1,0 +1,353 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Highlights edit collection\",\"description\":\"\",\"color\":\"#0ea5e9\",\"isPublic\":false}",
+    "ResponseBody": "{\"response\":{\"id\":915001,\"name\":\"Highlights edit collection\",\"ownerId\":1}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:18:46.187Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_note_edit_and_clean_delete"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Highlights edit article\",\"url\":\"https://example.com/highlights-edit-article\",\"description\":\"\",\"type\":\"url\",\"tags\":[],\"collection\":{\"id\":915001,\"name\":\"Highlights edit collection\",\"ownerId\":1}}",
+    "ResponseBody": "{\"response\":{\"id\":915002,\"name\":\"Highlights edit article\",\"collectionId\":915001}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:18:47.187Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_note_edit_and_clean_delete"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkId\":915002,\"color\":\"yellow\",\"text\":\"A passage whose note will be rewritten\",\"comment\":\"the original note\",\"startOffset\":0,\"endOffset\":20}",
+    "ResponseBody": "{\"response\":{\"id\":915003,\"color\":\"yellow\",\"comment\":\"the original note\",\"text\":\"A passage whose note will be rewritten\",\"linkId\":915002}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:18:48.187Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_note_edit_and_clean_delete"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"comment\":\"the edited note\"}",
+    "ResponseBody": "{\"response\":{\"id\":915003,\"color\":\"yellow\",\"comment\":\"the edited note\",\"text\":\"A passage whose note will be rewritten\",\"link\":{\"id\":915002,\"name\":\"Highlights edit article\"}}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PATCH",
+    "Path": "/api/v1/highlights/915003",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:18:49.187Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_note_edit_and_clean_delete"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"color\":\"green\"}",
+    "ResponseBody": "{\"response\":{\"id\":915003,\"color\":\"green\",\"comment\":\"the edited note\",\"text\":\"A passage whose note will be rewritten\",\"link\":{\"id\":915002,\"name\":\"Highlights edit article\"}}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PATCH",
+    "Path": "/api/v1/highlights/915003",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:18:50.187Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_note_edit_and_clean_delete"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"highlights\":[{\"id\":915003,\"color\":\"green\",\"comment\":\"the edited note\",\"text\":\"A passage whose note will be rewritten\"}],\"nextCursor\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:18:51.187Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_note_edit_and_clean_delete"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"comment\":\"the edited note\"}",
+    "ResponseBody": "{\"response\":\"Highlight not found.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PATCH",
+    "Path": "/api/v1/highlights/2147483600",
+    "QueryParams": {},
+    "StatusCode": 404,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:18:52.187Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_note_edit_and_clean_delete"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":915003}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/highlights/915003",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:18:53.187Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_note_edit_and_clean_delete"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"Highlight not found.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/highlights/915003",
+    "QueryParams": {},
+    "StatusCode": 404,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:18:54.187Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_note_edit_and_clean_delete"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":\"Highlight not found.\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/highlights/2147483600",
+    "QueryParams": {},
+    "StatusCode": 404,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:18:55.187Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_note_edit_and_clean_delete"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"highlights\":[],\"nextCursor\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:18:56.187Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_note_edit_and_clean_delete"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":915002}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/links/915002",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:18:57.187Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_note_edit_and_clean_delete"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":915001}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/915001",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:18:58.187Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_note_edit_and_clean_delete"
+  }
+]
