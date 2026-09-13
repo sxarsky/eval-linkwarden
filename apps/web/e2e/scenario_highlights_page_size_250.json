@@ -1,0 +1,141 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Highlights Page Size\",\"description\":\"\",\"color\":\"#0ea5e9\"}",
+    "ResponseBody": "{\"response\":{\"id\":5101,\"name\":\"Highlights Page Size\",\"ownerId\":1}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:16:12.698Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_page_size_250"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Page Size Source\",\"url\":\"https://example.com/page-size\",\"description\":\"\",\"type\":\"url\",\"tags\":[],\"collection\":{\"id\":5101}}",
+    "ResponseBody": "{\"response\":{\"id\":5202,\"name\":\"Page Size Source\",\"url\":\"https://example.com/page-size\",\"collectionId\":5101}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:16:13.698Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_page_size_250"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkId\":5202,\"color\":\"red\",\"text\":\"Page size passage\",\"startOffset\":0,\"endOffset\":17}",
+    "ResponseBody": "{\"response\":{\"id\":5303,\"color\":\"red\",\"linkId\":5202,\"text\":\"Page size passage\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:16:14.698Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_page_size_250"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"highlights\":[{\"id\":5303,\"color\":\"red\",\"linkId\":5202,\"text\":\"Page size passage\",\"link\":{\"id\":5202,\"name\":\"Page Size Source\",\"url\":\"https://example.com/page-size\"}}],\"nextCursor\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {
+      "take": [
+        "250"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:16:15.698Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_page_size_250"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":5101,\"name\":\"Highlights Page Size\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/5101",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:16:16.698Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_page_size_250"
+  }
+]
