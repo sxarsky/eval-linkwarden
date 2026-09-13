@@ -1,0 +1,59 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"code\":\"TESTBOT-NOEXP-A1\",\"discountPercent\":0}",
+    "ResponseBody": "{\"response\":{\"id\":907382,\"code\":\"TESTBOT-NOEXP-A1\",\"discountPercent\":0,\"expirationDate\":null,\"createdById\":1,\"createdAt\":\"2026-09-13T10:00:00.000Z\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/coupons",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:10:32.874Z",
+    "Scheme": "http",
+    "scenarioName": "coupons_create_without_expiration_defaults_null",
+    "UniqueFields": [
+      "code"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":907382,\"code\":\"TESTBOT-NOEXP-A1\",\"discountPercent\":0,\"expirationDate\":null,\"createdById\":1,\"createdAt\":\"2026-09-13T10:00:00.000Z\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/coupons/907382",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:10:33.874Z",
+    "Scheme": "http",
+    "scenarioName": "coupons_create_without_expiration_defaults_null"
+  }
+]
