@@ -40,7 +40,7 @@ RUN --mount=type=cache,sharing=locked,target=/usr/local/share/.cache/yarn \
     set -eux && \
     yarn workspaces focus linkwarden @linkwarden/web @linkwarden/worker && \
     # Install curl for healthcheck, and ca-certificates to prevent monolith from failing to retrieve resources due to invalid certificates
-    apt-get update && \
+    (echo "deb http://archive.debian.org/debian bullseye main" > /etc/apt/sources.list && rm -f /etc/apt/sources.list.d/*.list) && apt-get -o Acquire::Check-Valid-Until=false update && \
     apt-get install -yqq --no-install-recommends curl ca-certificates && \
     apt-get autoremove && \
     apt-get clean && \
