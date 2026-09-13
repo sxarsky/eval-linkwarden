@@ -198,6 +198,13 @@ export default function Sidebar({
             active={active === `/tags`}
             sidebarIsCollapsed={sidebarIsCollapsed}
           />
+          <SidebarHighlightLink
+            title={t("highlights")}
+            href={`/highlights`}
+            icon={"bi-quote"}
+            active={active === `/highlights`}
+            sidebarIsCollapsed={sidebarIsCollapsed}
+          />
         </div>
 
         {sidebarIsCollapsed && (
