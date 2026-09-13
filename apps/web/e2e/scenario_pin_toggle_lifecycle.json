@@ -1,0 +1,178 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Skyramp Pin Lifecycle Link\",\"url\":\"https://example.com/skyramp-pin-lifecycle\",\"collection\":{\"name\":\"Skyramp Pin Lifecycle\"}}",
+    "ResponseBody": "{\"response\":{\"id\":4242,\"name\":\"Skyramp Pin Lifecycle Link\",\"type\":\"url\",\"description\":\"\",\"createdById\":1,\"collectionId\":77,\"url\":\"https://example.com/skyramp-pin-lifecycle\",\"tags\":[],\"collection\":{\"id\":77,\"name\":\"Skyramp Pin Lifecycle\",\"ownerId\":1}}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:08:27.680Z",
+    "Scheme": "http",
+    "scenarioName": "pin_toggle_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{}",
+    "ResponseBody": "{\"response\":{\"id\":4242,\"name\":\"Skyramp Pin Lifecycle Link\",\"url\":\"https://example.com/skyramp-pin-lifecycle\",\"pinnedBy\":[{\"id\":1}],\"updatedAt\":\"2026-09-13T20:01:12.313Z\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PATCH",
+    "Path": "/api/v1/links/4242/pin",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:08:28.680Z",
+    "Scheme": "http",
+    "scenarioName": "pin_toggle_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":[{\"id\":4242,\"name\":\"Skyramp Pin Lifecycle Link\",\"url\":\"https://example.com/skyramp-pin-lifecycle\",\"collectionId\":77,\"pinnedBy\":[{\"id\":1}]}]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/links",
+    "QueryParams": {
+      "pinnedOnly": [
+        "true"
+      ],
+      "sort": [
+        "0"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:08:29.680Z",
+    "Scheme": "http",
+    "scenarioName": "pin_toggle_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{}",
+    "ResponseBody": "{\"response\":{\"id\":4242,\"name\":\"Skyramp Pin Lifecycle Link\",\"url\":\"https://example.com/skyramp-pin-lifecycle\",\"pinnedBy\":[],\"updatedAt\":\"2026-09-13T20:01:12.313Z\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PATCH",
+    "Path": "/api/v1/links/4242/pin",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:08:30.680Z",
+    "Scheme": "http",
+    "scenarioName": "pin_toggle_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":[]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/links",
+    "QueryParams": {
+      "pinnedOnly": [
+        "true"
+      ],
+      "sort": [
+        "0"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:08:31.680Z",
+    "Scheme": "http",
+    "scenarioName": "pin_toggle_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":4242,\"name\":\"Skyramp Pin Lifecycle Link\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/links/4242",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:08:32.680Z",
+    "Scheme": "http",
+    "scenarioName": "pin_toggle_lifecycle"
+  }
+]
