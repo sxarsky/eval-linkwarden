@@ -1,0 +1,288 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Highlights Lifecycle\",\"description\":\"\",\"color\":\"#0ea5e9\"}",
+    "ResponseBody": "{\"response\":{\"id\":9001,\"name\":\"Highlights Lifecycle\",\"description\":\"\",\"color\":\"#0ea5e9\",\"ownerId\":1}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:15:19.192Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"Lifecycle Source\",\"url\":\"https://example.com/lifecycle\",\"description\":\"\",\"type\":\"url\",\"tags\":[],\"collection\":{\"id\":9001}}",
+    "ResponseBody": "{\"response\":{\"id\":9002,\"name\":\"Lifecycle Source\",\"url\":\"https://example.com/lifecycle\",\"collectionId\":9001}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:15:20.192Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"linkId\":9002,\"color\":\"green\",\"text\":\"Lifecycle passage\",\"comment\":\"lifecycle annotation\",\"startOffset\":0,\"endOffset\":17}",
+    "ResponseBody": "{\"response\":{\"id\":9003,\"color\":\"green\",\"comment\":\"lifecycle annotation\",\"linkId\":9002,\"userId\":1,\"startOffset\":0,\"endOffset\":17,\"text\":\"Lifecycle passage\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:15:21.192Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"highlights\":[{\"id\":9003,\"color\":\"green\",\"comment\":\"lifecycle annotation\",\"linkId\":9002,\"text\":\"Lifecycle passage\",\"link\":{\"id\":9002,\"name\":\"Lifecycle Source\",\"url\":\"https://example.com/lifecycle\"}}],\"nextCursor\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {
+      "color": [
+        "green"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:15:22.192Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"highlights\":[{\"id\":9003,\"color\":\"green\",\"comment\":\"lifecycle annotation\",\"linkId\":9002,\"text\":\"Lifecycle passage\",\"link\":{\"id\":9002,\"name\":\"Lifecycle Source\",\"url\":\"https://example.com/lifecycle\"}}],\"nextCursor\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {
+      "q": [
+        "annotation"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:15:23.192Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"highlights\":[],\"nextCursor\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {
+      "q": [
+        "zzzz-no-such-term"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:15:24.192Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"comment\":\"edited lifecycle annotation\"}",
+    "ResponseBody": "{\"response\":{\"id\":9003,\"color\":\"green\",\"comment\":\"edited lifecycle annotation\",\"linkId\":9002,\"text\":\"Lifecycle passage\",\"link\":{\"id\":9002,\"name\":\"Lifecycle Source\",\"url\":\"https://example.com/lifecycle\"}}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PATCH",
+    "Path": "/api/v1/highlights/9003",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:15:25.192Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"highlights\":[{\"id\":9003,\"color\":\"green\",\"comment\":\"edited lifecycle annotation\",\"linkId\":9002,\"text\":\"Lifecycle passage\",\"link\":{\"id\":9002,\"name\":\"Lifecycle Source\",\"url\":\"https://example.com/lifecycle\"}}],\"nextCursor\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/highlights",
+    "QueryParams": {
+      "q": [
+        "edited"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:15:26.192Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":9003}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/highlights/9003",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:15:27.192Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":9001,\"name\":\"Highlights Lifecycle\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/9001",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:15:28.192Z",
+    "Scheme": "http",
+    "scenarioName": "highlights_library_lifecycle"
+  }
+]
