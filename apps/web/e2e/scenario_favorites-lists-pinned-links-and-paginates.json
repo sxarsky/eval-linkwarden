@@ -1,0 +1,314 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\":\"tb-favorites-col\",\"description\":\"\",\"color\":\"#0ea5e9\"}",
+    "ResponseBody": "{\"response\":{\"id\":101,\"name\":\"tb-favorites-col\",\"description\":\"\",\"color\":\"#0ea5e9\",\"parentId\":null,\"isPublic\":false,\"ownerId\":7,\"createdById\":7,\"members\":[]}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/collections",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:14:07.758Z",
+    "Scheme": "http",
+    "scenarioName": "favorites-lists-pinned-links-and-paginates"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"url\":\"https://example.com/tb-fav-a\",\"name\":\"tb-fav-a\",\"type\":\"url\",\"description\":\"\",\"tags\":[],\"collection\":{\"id\":101}}",
+    "ResponseBody": "{\"response\":{\"id\":201,\"name\":\"tb-fav-a\",\"url\":\"https://example.com/tb-fav-a\",\"type\":\"url\",\"description\":\"\",\"collectionId\":101,\"createdById\":7,\"createdAt\":\"2026-09-13T20:10:01.000Z\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:14:08.758Z",
+    "Scheme": "http",
+    "scenarioName": "favorites-lists-pinned-links-and-paginates"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"url\":\"https://example.com/tb-fav-b\",\"name\":\"tb-fav-b\",\"type\":\"url\",\"description\":\"\",\"tags\":[],\"collection\":{\"id\":101}}",
+    "ResponseBody": "{\"response\":{\"id\":202,\"name\":\"tb-fav-b\",\"url\":\"https://example.com/tb-fav-b\",\"type\":\"url\",\"description\":\"\",\"collectionId\":101,\"createdById\":7,\"createdAt\":\"2026-09-13T20:10:02.000Z\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:14:09.758Z",
+    "Scheme": "http",
+    "scenarioName": "favorites-lists-pinned-links-and-paginates"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"url\":\"https://example.com/tb-fav-c\",\"name\":\"tb-fav-c\",\"type\":\"url\",\"description\":\"\",\"tags\":[],\"collection\":{\"id\":101}}",
+    "ResponseBody": "{\"response\":{\"id\":203,\"name\":\"tb-fav-c\",\"url\":\"https://example.com/tb-fav-c\",\"type\":\"url\",\"description\":\"\",\"collectionId\":101,\"createdById\":7,\"createdAt\":\"2026-09-13T20:10:03.000Z\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/v1/links",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:14:10.758Z",
+    "Scheme": "http",
+    "scenarioName": "favorites-lists-pinned-links-and-paginates"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"id\":201,\"url\":\"https://example.com/tb-fav-a\",\"name\":\"tb-fav-a\",\"description\":\"\",\"tags\":[],\"collection\":{\"id\":101,\"ownerId\":7},\"pinnedBy\":[{\"id\":7}]}",
+    "ResponseBody": "{\"response\":{\"id\":201,\"name\":\"tb-fav-a\",\"collectionId\":101,\"pinnedBy\":[{\"id\":7}]}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PUT",
+    "Path": "/api/v1/links/201",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:14:11.758Z",
+    "Scheme": "http",
+    "scenarioName": "favorites-lists-pinned-links-and-paginates"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"id\":202,\"url\":\"https://example.com/tb-fav-b\",\"name\":\"tb-fav-b\",\"description\":\"\",\"tags\":[],\"collection\":{\"id\":101,\"ownerId\":7},\"pinnedBy\":[{\"id\":7}]}",
+    "ResponseBody": "{\"response\":{\"id\":202,\"name\":\"tb-fav-b\",\"collectionId\":101,\"pinnedBy\":[{\"id\":7}]}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PUT",
+    "Path": "/api/v1/links/202",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:14:12.758Z",
+    "Scheme": "http",
+    "scenarioName": "favorites-lists-pinned-links-and-paginates"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"id\":203,\"url\":\"https://example.com/tb-fav-c\",\"name\":\"tb-fav-c\",\"description\":\"\",\"tags\":[],\"collection\":{\"id\":101,\"ownerId\":7},\"pinnedBy\":[{\"id\":7}]}",
+    "ResponseBody": "{\"response\":{\"id\":203,\"name\":\"tb-fav-c\",\"collectionId\":101,\"pinnedBy\":[{\"id\":7}]}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PUT",
+    "Path": "/api/v1/links/203",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:14:13.758Z",
+    "Scheme": "http",
+    "scenarioName": "favorites-lists-pinned-links-and-paginates"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"links\":[{\"id\":203,\"name\":\"tb-fav-c\",\"url\":\"https://example.com/tb-fav-c\",\"collectionId\":101,\"pinnedBy\":[{\"id\":7}]},{\"id\":202,\"name\":\"tb-fav-b\",\"url\":\"https://example.com/tb-fav-b\",\"collectionId\":101,\"pinnedBy\":[{\"id\":7}]},{\"id\":201,\"name\":\"tb-fav-a\",\"url\":\"https://example.com/tb-fav-a\",\"collectionId\":101,\"pinnedBy\":[{\"id\":7}]}],\"cursor\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/links/favorites",
+    "QueryParams": {
+      "take": [
+        "101"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:14:14.758Z",
+    "Scheme": "http",
+    "scenarioName": "favorites-lists-pinned-links-and-paginates"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"links\":[{\"id\":203,\"name\":\"tb-fav-c\",\"collectionId\":101},{\"id\":202,\"name\":\"tb-fav-b\",\"collectionId\":101}],\"cursor\":\"202\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/links/favorites",
+    "QueryParams": {
+      "take": [
+        "2"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:14:15.758Z",
+    "Scheme": "http",
+    "scenarioName": "favorites-lists-pinned-links-and-paginates"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"links\":[{\"id\":201,\"name\":\"tb-fav-a\",\"collectionId\":101}],\"cursor\":null}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/v1/links/favorites",
+    "QueryParams": {
+      "take": [
+        "2"
+      ],
+      "cursor": [
+        "202"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:14:16.758Z",
+    "Scheme": "http",
+    "scenarioName": "favorites-lists-pinned-links-and-paginates"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"response\":{\"id\":101,\"name\":\"tb-favorites-col\"}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/v1/collections/101",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 3000,
+    "Timestamp": "2026-09-13T20:14:17.758Z",
+    "Scheme": "http",
+    "scenarioName": "favorites-lists-pinned-links-and-paginates"
+  }
+]
