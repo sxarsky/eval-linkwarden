@@ -11,7 +11,30 @@ const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
 export default async function users(req: NextApiRequest, res: NextApiResponse) {
   const token = await verifyToken({ req });
 
-  const queryId = Number(req.query.id);
+  const rawId = req.query.id as string;
+  const queryId = Number(rawId);
+
+  // Public profile lookup: if the id segment is a non-numeric username,
+  // return the user's public profile without authentication.
+  // Returns 404 (not 403) when the user is private — avoids existence disclosure.
+  if (req.method === "GET" && isNaN(queryId)) {
+    const profile = await prisma.user.findUnique({
+      where: { username: rawId },
+      select: {
+        id: true,
+        name: true,
+        username: true,
+        image: true,
+        isPrivate: true,
+        createdAt: true,
+      },
+    });
+    if (!profile || profile.isPrivate) {
+      return res.status(404).json({ response: "User not found." });
+    }
+    const { isPrivate: _hidden, ...publicProfile } = profile;
+    return res.status(200).json({ response: publicProfile });
+  }
 
   if (!queryId) {
     return res.status(400).json({ response: "Invalid request." });
