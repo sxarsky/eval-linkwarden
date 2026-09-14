@@ -28,7 +28,20 @@ export default async function links(req: NextApiRequest, res: NextApiResponse) {
     };
 
     const links = await getLinks(user.id, convertedData);
-    return res.status(links.status).json({ response: links.response });
+
+    // BREAKING CHANGE: response is now wrapped in {data, meta} envelope.
+    // Previously returned Link[] directly; now returns {data: Link[], meta: {total, cursor}}.
+    const data = Array.isArray(links.response) ? links.response : [];
+    const nextCursor =
+      data.length > 0 ? String(data[data.length - 1].id) : null;
+    const total = data.length;
+
+    return res.status(links.status).json({
+      response: {
+        data,
+        meta: { total, cursor: nextCursor },
+      },
+    });
   } else if (req.method === "POST") {
     if (process.env.NEXT_PUBLIC_DEMO === "true")
       return res.status(400).json({
