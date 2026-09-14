@@ -201,7 +201,7 @@ export default function Login({
             type="submit"
             size="full"
             variant="accent"
-            data-testid="submit-login-button"
+            data-testid="login-submit-button"
             disabled={submitLoader}
           >
             {t("login")}
