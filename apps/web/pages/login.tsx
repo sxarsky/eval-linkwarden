@@ -243,35 +243,16 @@ export default function Login({
     return Buttons;
   }
 
-  function displayRegistration() {
-    if (availableLogins.registrationDisabled !== "true") {
-      return (
-        <div className="flex items-baseline gap-1 justify-center">
-          <p className="w-fit text-gray-500 dark:text-gray-400">
-            {t("new_here")}
-          </p>
-          <Link
-            href={"/register"}
-            className="font-semibold"
-            data-testid="register-link"
-          >
-            {t("sign_up")}
-          </Link>
-        </div>
-      );
-    }
-  }
 
   return (
     <CenteredForm text={t("sign_in_to_your_account")}>
       <form onSubmit={loginUser}>
         <div
-          className="p-4 mx-auto flex flex-col gap-3 justify-between max-w-[30rem] min-w-80 w-full bg-slate-50 dark:bg-neutral-800 rounded-xl shadow-md border border-sky-100 dark:border-neutral-700"
+          className="p-4 mx-auto flex flex-col gap-4 justify-between max-w-[30rem] min-w-80 w-full bg-slate-50 dark:bg-neutral-800 rounded-xl shadow-md border border-sky-100 dark:border-neutral-700"
           data-testid="login-form"
         >
           {displayLoginCredential()}
           {displayLoginExternalButton()}
-          {displayRegistration()}
         </div>
       </form>
       <InstallApp />
