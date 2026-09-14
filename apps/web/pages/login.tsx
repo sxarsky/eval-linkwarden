@@ -168,7 +168,7 @@ export default function Login({
               placeholder="johnny"
               value={form.username}
               className="bg-base-100"
-              data-testid="username-input"
+              data-testid="username-field"
               onChange={(e) => setForm({ ...form, username: e.target.value })}
             />
           </div>
@@ -182,7 +182,7 @@ export default function Login({
               placeholder="••••••••••••••"
               value={form.password}
               className="bg-base-100"
-              data-testid="password-input"
+              data-testid="password-field"
               onChange={(e) => setForm({ ...form, password: e.target.value })}
             />
             {availableLogins.emailEnabled === "true" && (
