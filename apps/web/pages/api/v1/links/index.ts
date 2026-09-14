@@ -5,6 +5,7 @@ import { LinkRequestQuery } from "@linkwarden/types/global";
 import verifyUser from "@/lib/api/verifyUser";
 import deleteLinksById from "@/lib/api/controllers/links/bulk/deleteLinksById";
 import updateLinks from "@/lib/api/controllers/links/bulk/updateLinks";
+import { enqueueArchiveJob } from "@/lib/api/archiveQueue";
 
 export default async function links(req: NextApiRequest, res: NextApiResponse) {
   const user = await verifyUser({ req, res });
@@ -37,6 +38,20 @@ export default async function links(req: NextApiRequest, res: NextApiResponse) {
       });
 
     const newlink = await postLink(req.body, user.id);
+
+    // Enqueue a BullMQ archive job immediately after link creation.
+    // archiveStatus is "pending" right after POST; "completed" after worker finishes.
+    // Same URL posted twice → single archive job (idempotent dedup via enqueueArchiveJob).
+    if (newlink.status === 200 && newlink.response && typeof newlink.response === "object") {
+      const link = newlink.response as any;
+      if (link.url) {
+        const jobId = await enqueueArchiveJob(link.id, link.url);
+        return res.status(newlink.status).json({
+          response: { ...link, archiveStatus: "pending", archiveJobId: jobId },
+        });
+      }
+    }
+
     return res.status(newlink.status).json({
       response: newlink.response,
     });
