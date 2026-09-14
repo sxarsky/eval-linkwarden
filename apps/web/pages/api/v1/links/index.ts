@@ -5,6 +5,7 @@ import { LinkRequestQuery } from "@linkwarden/types/global";
 import verifyUser from "@/lib/api/verifyUser";
 import deleteLinksById from "@/lib/api/controllers/links/bulk/deleteLinksById";
 import updateLinks from "@/lib/api/controllers/links/bulk/updateLinks";
+import { getArchiveStatus } from "@/lib/api/getArchiveStatus";
 
 export default async function links(req: NextApiRequest, res: NextApiResponse) {
   const user = await verifyUser({ req, res });
@@ -28,7 +29,14 @@ export default async function links(req: NextApiRequest, res: NextApiResponse) {
     };
 
     const links = await getLinks(user.id, convertedData);
-    return res.status(links.status).json({ response: links.response });
+    // Attach archiveStatus derived from archive job columns
+    const linksWithStatus = Array.isArray(links.response)
+      ? links.response.map((link: any) => ({
+          ...link,
+          archiveStatus: getArchiveStatus(link),
+        }))
+      : links.response;
+    return res.status(links.status).json({ response: linksWithStatus });
   } else if (req.method === "POST") {
     if (process.env.NEXT_PUBLIC_DEMO === "true")
       return res.status(400).json({
